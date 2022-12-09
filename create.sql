@@ -46,21 +46,82 @@ CREATE TABLE reservation(
 
 CREATE TABLE travel_to(
 
-	to_tr_id INT(11),
+	to_tr_id INT(11), 
 	to_dst_id INT(11),
-	to_arrival DATETIME,
-	to_departure DATETIME,
+	to_arrival DATETIME NOT NULL,
+	to_departure DATETIME NOT NULL,
 
 	PRIMARY KEY(to_tr_id,to_dst_id),	
 
 	CONSTRAINT TRIPID FOREIGN KEY (to_tr_id) REFERENCES trip(tr_id) 
-        ON DELETE CASCADE ON UPDATE CASCADE,
+    ON DELETE CASCADE ON UPDATE CASCADE,
 
 	CONSTRAINT TRDESTID FOREIGN KEY (to_dst_id) REFERENCES destination(dst_id)
 	ON DELETE CASCADE ON UPDATE CASCADE  
 
 ) engine=InnoDB;
 
+CREATE TABLE event (
+	
+	ev_tr_id INT(11),
+	ev_start DATETIME NOT NULL,
+	ev_end DATETIME NOT NULL,
+	ev_desc TEXT,
+	
+	PRIMARY KEY(ev_tr_id, ev_start),
+	
+	CONSTRAINT EVTRIPID FOREIGN KEY (ev_tr_id) REFERENCES trip(tr_id)
+	ON DELETE CASCADE ON UPDATE CASCADE
+	
+) engine=InnoDB;
 
+CREATE TABLE driver (
 
+	drv_AT CHAR(10),
+	drv_license ENUM ('A','B','C','D'),
+	drv_rout ENUM('LOCAL','ABROAD'),
+	drv_experience TINYINT(4) NOT NULL,
+	
+	PRIMARY KEY(drv_AT),
+	
+	CONSTRAINT DRVWRKAT FOREIGN KEY (drv_AT) REFERENCES worker(wrk_AT)
+	ON DELETE CASCADE ON UPDATE CASCADE
 
+) engine=InnoDB;
+
+CREATE TABLE worker (
+
+	wrk_AT CHAR(10) NOT NULL,
+	wrk_name VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+	wrk_lname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+	wrk_salary FLOAT (7,2) NOT NULL,
+	wrk_br_code INT(11),
+	
+	PRIMARY KEY(wrk_AT)
+	
+
+) engine=InnoDB;
+
+CREATE TABLE guide (
+
+	gui_AT CHAR(10),
+	gui_CV TEXT ,
+	
+	PRIMARY KEY (gui_AT),
+	
+	CONSTRAINT GUIWRK FOREIGN KEY (gui_AT) REFERENCES worker (wrk_AT)
+	ON DELETE CASCADE ON UPDATE CASCADE
+
+) engine=InnoDB;
+
+CREATE TABLE languages (
+
+	lng_gui_AT CHAR(10),
+	lng_language VARCHAR(30) DEFAULT 'unknown' NOT NULL,
+	
+	PRIMARY KEY (lng_gui_AT, lng_language),
+	
+	CONSTRAINT GUILNG FOREIGN KEY (lng_gui_AT) REFERENCES guide (gui_AT)
+	ON DELETE CASCADE ON UPDATE CASCADE
+
+) engine=InnoDB;
