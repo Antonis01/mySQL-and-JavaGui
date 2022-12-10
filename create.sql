@@ -125,3 +125,54 @@ CREATE TABLE languages (
 	ON DELETE CASCADE ON UPDATE CASCADE
 
 ) engine=InnoDB;
+
+CREATE TABLE branch (
+
+	br_code INT(11) NOT NULL,
+	br_street VARCHAR(30) DEFAULT 'unknown' NOT NULL,
+	br_num INT(4) NOT NULL,
+	br_city VARCHAR(30) DEFAULT 'unknown' NOT NULL,
+	
+	PRIMARY KEY (br_code)
+
+) engine=InnoDB;
+
+CREATE TABLE _admin (
+
+	adm_AT CHAR(10) DEFAULT 'unknown' NOT NULL, 
+	adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING'),
+	adm_diploma VARCHAR(200) DEFAULT 'unknown' NOT NULL,
+	
+	PRIMARY KEY (adm_AT)
+
+) engine=InnoDB;
+
+
+CREATE TABLE phones (
+
+	ph_br_code INT(11),
+	ph_number CHAR(10) DEFAULT 'unknown' NOT NULL,
+	
+	PRIMARY KEY (ph_br_code, ph_number),
+	
+	CONSTRAINT BRANCHPH FOREIGN KEY (ph_br_code) REFERENCES branch (br_code)
+	ON DELETE CASCADE ON UPDATE CASCADE
+
+) engine=InnoDB;
+
+
+
+CREATE TABLE manages (
+
+	mng_adm_AT CHAR(10),
+	mng_br_code INT(11),
+	
+	PRIMARY KEY (mng_adm_AT, mng_br_code),
+	
+	CONSTRAINT ADMMNGRAT FOREIGN KEY (mng_adm_AT) REFERENCES _admin (adm_AT)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT BRANCHMNGCODE FOREIGN KEY (mng_br_code) REFERENCES branch (br_code)
+	ON DELETE CASCADE ON UPDATE CASCADE
+
+) engine=InnoDB;
