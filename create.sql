@@ -11,7 +11,7 @@ CREATE TABLE branch (
 
         PRIMARY KEY (br_code)
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE phones (
@@ -24,7 +24,7 @@ CREATE TABLE phones (
         CONSTRAINT BRANCHPH FOREIGN KEY (ph_br_code) REFERENCES branch (br_code)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE worker (
@@ -40,7 +40,7 @@ CREATE TABLE worker (
         CONSTRAINT BRANCHWRK FOREIGN KEY (wrk_br_code) REFERENCES branch (br_code)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE _admin (
@@ -54,7 +54,7 @@ CREATE TABLE _admin (
         CONSTRAINT ADMWRK FOREIGN KEY (adm_AT) REFERENCES worker (wrk_AT)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE manages (
@@ -70,7 +70,7 @@ CREATE TABLE manages (
         CONSTRAINT BRANCHMNGCODE FOREIGN KEY (mng_br_code) REFERENCES branch (br_code)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE guide (
@@ -83,7 +83,7 @@ CREATE TABLE guide (
         CONSTRAINT GUIWRK FOREIGN KEY (gui_AT) REFERENCES worker (wrk_AT)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE languages (
@@ -96,7 +96,7 @@ CREATE TABLE languages (
         CONSTRAINT GUILNG FOREIGN KEY (lng_gui_AT) REFERENCES guide (gui_AT)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE driver (
@@ -111,7 +111,7 @@ CREATE TABLE driver (
         CONSTRAINT DRVWRKAT FOREIGN KEY (drv_AT) REFERENCES worker(wrk_AT)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE trip(
@@ -136,7 +136,7 @@ CREATE TABLE trip(
         CONSTRAINT TRDRVAT FOREIGN KEY(tr_drv_AT) REFERENCES driver(drv_AT)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE event (
@@ -151,7 +151,7 @@ CREATE TABLE event (
         CONSTRAINT EVTRIPID FOREIGN KEY (ev_tr_id) REFERENCES trip(tr_id)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE destination(
@@ -168,7 +168,7 @@ CREATE TABLE destination(
         CONSTRAINT DSTLOC FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE travel_to(
@@ -186,7 +186,7 @@ CREATE TABLE travel_to(
         CONSTRAINT TRDESTID FOREIGN KEY (to_dst_id) REFERENCES destination(dst_id)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
 CREATE TABLE reservation(
@@ -202,6 +202,6 @@ CREATE TABLE reservation(
         CONSTRAINT RESTRID FOREIGN KEY (res_tr_id) REFERENCES trip(tr_id)
         ON DELETE CASCADE ON UPDATE CASCADE
 
-) engine=InnoDB;
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
