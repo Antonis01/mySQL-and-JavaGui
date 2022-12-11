@@ -6,7 +6,7 @@ CREATE TABLE branch (
 
         br_code INT(11) NOT NULL AUTO_INCREMENT,
         br_street VARCHAR(30) DEFAULT 'unknown' NOT NULL,
-        br_num INT(4) NOT NULL AUTO_INCREMENT,
+        br_num INT(4) NOT NULL,
         br_city VARCHAR(30) DEFAULT 'unknown' NOT NULL,
 
         PRIMARY KEY (br_code)
@@ -29,7 +29,7 @@ CREATE TABLE phones (
 
 CREATE TABLE worker (
 
-        wrk_AT CHAR(10) DEFAULT 'unknown' NOT NULL AUTO_INCREMENT,
+        wrk_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
         wrk_name VARCHAR(20) DEFAULT 'unknown' NOT NULL,
         wrk_lname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
         wrk_salary FLOAT (7,2) NOT NULL,
