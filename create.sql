@@ -4,9 +4,9 @@ USE travel_agency;
 
 CREATE TABLE branch (
 
-        br_code INT(11) NOT NULL,
+        br_code INT(11) NOT NULL AUTO_INCREMENT,
         br_street VARCHAR(30) DEFAULT 'unknown' NOT NULL,
-        br_num INT(4) NOT NULL,
+        br_num INT(4) NOT NULL AUTO_INCREMENT,
         br_city VARCHAR(30) DEFAULT 'unknown' NOT NULL,
 
         PRIMARY KEY (br_code)
@@ -29,7 +29,7 @@ CREATE TABLE phones (
 
 CREATE TABLE worker (
 
-        wrk_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
+        wrk_AT CHAR(10) DEFAULT 'unknown' NOT NULL AUTO_INCREMENT,
         wrk_name VARCHAR(20) DEFAULT 'unknown' NOT NULL,
         wrk_lname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
         wrk_salary FLOAT (7,2) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE driver (
 
 CREATE TABLE trip(
 
-        tr_id INT(11) NOT NULL,
+        tr_id INT(11) NOT NULL AUTO_INCREMENT,
         tr_departure DATETIME NOT NULL,
         tr_return DATETIME NOT NULL,
         tr_maxseats TINYINT(4) NOT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE event (
 
 CREATE TABLE destination(
 
-        dst_id INT(11) NOT NULL,
+        dst_id INT(11) NOT NULL AUTO_INCREMENT,
         dst_name VARCHAR(50) DEFAULT 'unknown' NOT NULL,
         dst_descr TEXT,
         dst_rtype ENUM('LOCAL','ABROAD') NOT NULL, 
