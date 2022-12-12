@@ -54,3 +54,15 @@ INSERT INTO worker VALUES
 (1180502,"Μάιλς","Κοξ",2499.00,8),
 (6058737,"Μάθιου","Φόλεϊ",4171.00,9),
 (2232113,"Μπρουκ","Ουίλιαμς",2127.00,10);
+
+INSERT INTO _admin VALUES
+(6445806,"ADMINISTRATIVE","Bachelor of Arts in Business Administration"),
+(6930705,"LOGISTICS","Bachelor of Science in Logistics Management"),
+(1991121,"LOGISTICS","Bachelor of Science in Logistics Management"),
+(5920309,"ADMINISTRATIVE","Bachelor of Arts in Business Administration"),
+(4786524,"ACCOUNTING","Bachelor of Science in Accounting"),
+(5727702,"ACCOUNTING","Bachelor of Science in Accounting"),
+(9961983,"ADMINISTRATIVE","Bachelor of Arts in Business Administration"),
+(1180502,"ACCOUNTING","Bachelor of Science in Accounting"),
+(6058737,"ADMINISTRATIVE","Bachelor of Arts in Business Administration"),
+(2232113,"LOGISTICS","Bachelor of Science in Logistics Management");
