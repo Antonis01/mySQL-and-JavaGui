@@ -44,7 +44,18 @@ INSERT INTO worker VALUES
 (9961983,"Ματθίλντα","Χάμφρεϊ",3076.00,7),
 (1180502,"Μάιλς","Κοξ",2499.00,8),
 (6058737,"Μάθιου","Φόλεϊ",4171.00,9),
-(2232113,"Μπρουκ","Ουίλιαμς",2127.00,10);
+(2232113,"Μπρουκ","Ουίλιαμς",2127.00,10)
+
+(1548698, "Μάνος","Αναστασίου",2568.00,1)
+(1489865,"Κωσταντίνος","Κατακουζηνός",4999.99,2 )
+(5268964, "Θωμά", "Αντωνίου",1234.56,3)
+(2356484,"Κωσταντίνος","Κυριάκου",1000.00,4)
+(7895964,"Μαρία","Παρασκευά",4856.70,5),
+(1457846,"Γεωργία","Παναγιώτου",3568.99,6),
+(5684685,"Χριστίνα","Χρίστου",2563.78,7),
+(6564561,"Παναγιώτα","Γεωργίου",4038.00,8),
+(6623468,"Παρασκεύη","Κωσταντίνου",1457.86,9),
+(3154985,"Κυριακή","Θωμά",5458.48,10);
 
 INSERT INTO _admin VALUES
 (6445806,"ADMINISTRATIVE","Bachelor of Arts in Business Administration"),
@@ -70,4 +81,26 @@ INSERT INTO driver VALUES
 (1318228,"D","LOCAL",1),
 (2173148,"A","LOCAL",10);
 
+INSERT INTO guide VALUES
+(1548698,"passionate,knowledgable "),
+(1489865,"Experienced, Knowledgable, adaptable, reliable"),
+(5268964,"Passionate"),
+(2356484,"adaptable"),
+(7895964,"Experienced, Knowledgable, friendly, adaptable"),
+(1457846,"Knowledgable, Passionate, adaptable"),
+(5684685,"knowledgable,reliable"),
+(6564561,"Experienced,friendly,reliable,hardworking"),
+(6623468,"Approchable,friendly"),
+(3154985,"Experienced, Knowledgable, friendly, adaptable, reliable");
 
+INSERT INTO language VALUES
+(1548698,"English"),
+(1489865,"Greek "),
+(5268964,"Greek"),
+(2356484,"English"),
+(7895964,"Russian"),
+(1457846,"Egyptian"),
+(5684685,"French"),
+(6564561,"German"),
+(6623468,"chinese"),
+(3154985,"Japanese");
