@@ -166,7 +166,7 @@ CREATE TABLE destination(
         PRIMARY KEY(dst_id),
 
         CONSTRAINT DSTLOC FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
-        ON DELETE CASCADE ON UPDATE CASCADE
+        ON DELETE SET NULL ON UPDATE SET NULL 
 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
