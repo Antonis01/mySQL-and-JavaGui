@@ -9,7 +9,7 @@ CREATE TABLE branch (
         br_num INT(4) NOT NULL,
         br_city VARCHAR(30) DEFAULT 'unknown' NOT NULL,
 
-        PRIMARY KEY (br_code)
+        UNIQUE (br_code)
 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
@@ -35,7 +35,7 @@ CREATE TABLE worker (
         wrk_salary FLOAT (7,2) NOT NULL,
         wrk_br_code INT(11),
 
-        PRIMARY KEY(wrk_AT),
+        UNIQUE (wrk_AT),
 
         CONSTRAINT BRANCHWRK FOREIGN KEY (wrk_br_code) REFERENCES branch (br_code)
         ON DELETE CASCADE ON UPDATE CASCADE
@@ -125,7 +125,7 @@ CREATE TABLE trip(
         tr_gui_AT CHAR(10),
         tr_drv_AT CHAR(10),
 
-        PRIMARY KEY(tr_id),
+        UNIQUE (tr_id, tr_departure, tr_return),
 
         CONSTRAINT TRBRCODE FOREIGN KEY(tr_br_code) REFERENCES branch(br_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
@@ -163,7 +163,7 @@ CREATE TABLE destination(
         dst_language VARCHAR(30) DEFAULT 'unknown' NOT NULL,
         dst_location INT(11),
 
-        PRIMARY KEY(dst_id),
+        UNIQUE (dst_id),
 
         CONSTRAINT DSTLOC FOREIGN KEY (dst_location) REFERENCES destination(dst_id)
         ON DELETE SET NULL ON UPDATE SET NULL 
@@ -197,7 +197,7 @@ CREATE TABLE reservation(
         res_lname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
         res_isadult ENUM('ADULT','MINOR') NOT NULL,
 
-        PRIMARY KEY(res_tr_id,res_seatnum),
+        UNIQUE (res_tr_id,res_seatnum),
 
         CONSTRAINT RESTRID FOREIGN KEY (res_tr_id) REFERENCES trip(tr_id)
         ON DELETE CASCADE ON UPDATE CASCADE
@@ -205,3 +205,33 @@ CREATE TABLE reservation(
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
 
+CREATE TABLE offers(
+
+	offer_tr_id INT(11) NOT NULL,
+	offer_begins DATETIME NOT NULL,
+	offer_ends DATETIME NOT NULL,
+	cost_per_person FLOAT(7,2) NOT NULL,
+	dst_id INT(11),
+
+	UNIQUE (offer_tr_id),
+
+	CONSTRAINT OFFDSTID FOREIGN KEY (dst_id) REFERENCES destination(dst_id)
+	ON DELETE CASCADE ON UPDATE CASCADE 
+
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
+
+
+CREATE TABLE reservation_offers(
+	
+	res_off_tr_id INT(11) NOT NULL,
+	lastname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+	firstname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+	offer_tr_id INT(11),
+	pay_in_adv FLOAT (7,2) NOT NULL,
+
+	UNIQUE (res_off_tr_id),
+
+	CONSTRAINT RESOFFTRID FOREIGN KEY (offer_tr_id) REFERENCES offers(offer_tr_id)
+	ON DELETE CASCADE ON UPDATE CASCADE 
+
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
