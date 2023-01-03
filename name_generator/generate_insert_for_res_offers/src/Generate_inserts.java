@@ -63,7 +63,7 @@ public class Generate_inserts {
         double pay_in_adv = 50.00 + Math.random() * (200.00 - 50.00);
         pay_in_adv = Math.round(pay_in_adv * 100.0) / 100.0;
 
-        String lastRow = "(" + count + ",\"" + lastname.get(rand_lastname) + "\",\"" + firstname.get(rand_name) +"\"," + 3 + pay_in_adv + ");";
+        String lastRow = "(" + count + ",\"" + lastname.get(rand_lastname) + "\",\"" + firstname.get(rand_name) +"\"," + 3 + "," + pay_in_adv + ");";
         bw.write(lastRow);
 
         try {

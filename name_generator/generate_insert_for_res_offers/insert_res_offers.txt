@@ -59998,4 +59998,4 @@ INSERT INTO reservation_offers VALUES
 (59997,"Martin","Nina",3,153.26),
 (59998,"Manning","Josephine",3,124.64),
 (59999,"Bell","Colten",3,150.33),
-(60000,"Lloyd","Reagan",3139.84);
+(60000,"Lloyd","Reagan",3,139.84);
