@@ -44,14 +44,14 @@ CREATE TABLE worker (
 
 CREATE TABLE IT(
 		
-		IT_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
-		password VARCHAR(10) DEFAULT 'password' NOT NULL,
-		start_date DATETIME NOT NULL,
-		end_date DATETIME NOT NULL,
+	IT_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
+	password VARCHAR(10) DEFAULT 'password' NOT NULL,
+	start_date DATETIME NOT NULL,
+	end_date DATETIME NOT NULL,
 		
-		UNIQUE (IT_AT),
+	UNIQUE (IT_AT),
 		
-		CONSTRAINT wrkIT FOREIGN KEY (IT_AT) REFERENCES worker (wrk_AT) 
+	CONSTRAINT wrkIT FOREIGN KEY (IT_AT) REFERENCES worker (wrk_AT) 
         ON DELETE CASCADE ON UPDATE CASCADE
 
 
@@ -223,8 +223,8 @@ CREATE TABLE reservation(
 CREATE TABLE offers(
 
 	offer_tr_id INT(11) NOT NULL,
-	offer_begins DATETIME NOT NULL,
-	offer_ends DATETIME NOT NULL,
+	offer_begins DATE NOT NULL,
+	offer_ends DATE NOT NULL,
 	cost_per_person FLOAT(7,2) NOT NULL,
 	dst_id INT(11),
 
