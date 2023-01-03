@@ -42,6 +42,21 @@ CREATE TABLE worker (
 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
+CREATE TABLE IT(
+		
+		IT_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
+		password VARCHAR(10) DEFAULT 'password' NOT NULL,
+		start_date DATETIME NOT NULL,
+		end_date DATETIME NOT NULL,
+		
+		UNIQUE (IT_AT),
+		
+		CONSTRAINT  FOREIGN KEY  REFERENCES 
+        ON DELETE CASCADE ON UPDATE CASCADE
+
+
+) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
+
 
 CREATE TABLE _admin (
 

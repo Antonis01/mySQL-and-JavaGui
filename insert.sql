@@ -93,16 +93,16 @@ INSERT INTO driver VALUES
 (2173148,"A","LOCAL",10);
 
 INSERT INTO guide VALUES
-(1548698,"passionate,knowledgable"),
-(1489865,"Experienced, Knowledgable, adaptable, reliable"),
-(5268964,"Passionate"),
-(2356484,"adaptable"),
-(7895964,"Experienced, Knowledgable, friendly, adaptable"),
-(1457846,"Knowledgable, Passionate, adaptable"),
-(5684685,"knowledgable,reliable"),
-(6564561,"Experienced,friendly,reliable,hardworking"),
-(6623468,"Approchable,friendly"),
-(3154985,"Experienced, Knowledgable, friendly, adaptable, reliable");
+(1548698,"one Language"),
+(1489865,"Multiple Languages"),
+(5268964,"one Language"),
+(2356484,"one Language"),
+(7895964,"Multiple Languages"),
+(1457846,"Multiple Languages"),
+(5684685,"one Language"),
+(6564561,"Multiple Languages"),
+(6623468,"one Language"),
+(3154985,"Multiple Languages");
 
 INSERT INTO languages VALUES
 (1548698,"English"),
