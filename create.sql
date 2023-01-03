@@ -42,16 +42,16 @@ CREATE TABLE worker (
 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
-CREATE TABLE IT(
+CREATE TABLE it(
 		
-	IT_AT CHAR(10) DEFAULT 'unknown' NOT NULL,
-	password VARCHAR(10) DEFAULT 'password' NOT NULL,
+	it_at CHAR(10) DEFAULT 'unknown' NOT NULL,
+	passwords VARCHAR(10) DEFAULT 'password' NOT NULL,
 	start_date DATETIME NOT NULL,
 	end_date DATETIME NOT NULL,
 		
-	UNIQUE (IT_AT),
+	UNIQUE (it_at),
 		
-	CONSTRAINT wrkIT FOREIGN KEY (IT_AT) REFERENCES worker (wrk_AT) 
+	CONSTRAINT WRKIT FOREIGN KEY (it_at) REFERENCES worker (wrk_AT) 
         ON DELETE CASCADE ON UPDATE CASCADE
 
 
