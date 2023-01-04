@@ -1,5 +1,7 @@
 #-- 3.1.3.4.a
 
+CREATE INDEX payInAdv_lname_fname_offerTrId_indx ON reservation_offers(pay_in_adv, lastname, firstname, offer_tr_id);
+
 DROP PROCEDURE IF EXISTS pay_in_advance;
 DELIMITER $
 
