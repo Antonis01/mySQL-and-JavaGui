@@ -1,3 +1,28 @@
+#-- 3.1.3.3
+
+CREATE PROCEDURE delete_admin (IN name VARCHAR(20), IN surname VARCHAR(20)) 
+BEGIN
+  DECLARE worker_id INT;
+
+  label_exit: BEGIN
+    SELECT `wrk_AT` INTO worker_id
+    FROM `worker`
+    WHERE `wrk_name` = name AND `wrk_lname` = surname;
+
+    IF EXISTS (SELECT 1 FROM _admin WHERE `adm_AT` = worker_id AND `adm_type` = 'ADMINISTRATIVE') THEN
+      SELECT "Can't Delete Administrative";
+      LEAVE label_exit;
+    END IF; 
+
+    DELETE FROM `_admin`
+    WHERE `adm_AT` = worker_id AND (`adm_type` = 'LOGISTICS' OR `adm_type` = 'ACCOUNTING');
+
+    DELETE FROM `worker` 
+    WHERE `wrk_AT` = worker_id; 
+  END;
+
+END
+
 #-- 3.1.3.4.a
 
 CREATE INDEX payInAdv_lname_fname_offerTrId_indx ON reservation_offers(pay_in_adv, lastname, firstname, offer_tr_id);
