@@ -1,3 +1,60 @@
+#-- 3.1.3.1
+
+DROP PROCEDURE IF EXISTS new_driver;
+DELIMITER $
+ 
+CREATE PROCEDURE new_driver (in id VARCHAR(10),in name VARCHAR(20),in surname VARCHAR(20),in salary FLOAT(7,2), in license_type ENUM , in route ENUM , in experience TINYINT(4))
+BEGIN
+	DECLARE branch INT ;
+	
+	SELECT branch = MIN(branch) FROM 
+	(SELECT br_code,COUNT(*) AS DRIVERS FROM branch INNER JOIN worker ON br_code=wrk_br_code join driver on wrk_AT=drv_AT ORDER BY COUNT(*) DESC);
+	
+	INSERT INTO worker (id, name, surname, salary) 
+    VALUES (@id, @name, @surname, @salary);
+	
+	INSERT INTO driver (id, license_type, route,Experience,branchid) 
+    VALUES (@id, @license_type, @route,@Experience,@branchid);
+
+END $
+
+#-- 3.1.3.2
+
+DROP PROCEDURE IF EXISTS sceduled_trips;
+DELIMITER $
+
+CREATE PROCEDURE sceduled_trips (IN branchcode INT(10),IN date1 DATETIME, IN date2 DATETIME)
+BEGIN
+	
+	DECLARE branch_id INT;
+	DECLARE departure DATETIME;
+	DECLARE tripid INT;
+	DECLARE guideAT INT;
+	DECLARE driverAT INT;
+	
+	
+	SELECT tr_br_code INTO branch_id FROM trip ;
+	
+	
+	IF (branchcode = branch_id )THEN
+	
+	SELECT tr_departure INTO departure FROM  trip WHERE tr_br_code=branch_id;
+	SELECT tr_gui_AT INTO guideAT FROM trip WHERE tr_br_code=branch_id;
+	SELECT tr_drv_AT INTO driverAT FROM trip WHERE tr_br_code=branch_id;
+	SELECT tr_id INTO tripid FROM trip WHERE tr_br_code=branch_id;
+	
+	 IF (date1 < departure AND date2 > departure ) THEN
+		SELECT * FROM trip WHERE tr_br_code = branchcode ;
+		SELECT wrk_name AND wrk_lname AS QUIDE FROM worker WHERE wrk_AT = guideAT ;
+		SELECT wrk_name AND wrk_lname AS DRIVER FROM  worker WHERE wrk_AT = driverAT;
+		SELECT COUNT(*) AS RESERVATIONS FROM reservations WHERE res_tr_id = tripid;
+		END IF;
+	END IF;
+
+
+END$
+
+
 #-- 3.1.3.3
 
 CREATE PROCEDURE delete_admin (IN name VARCHAR(20), IN surname VARCHAR(20)) 

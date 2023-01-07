@@ -250,3 +250,11 @@ CREATE TABLE reservation_offers(
 	ON DELETE CASCADE ON UPDATE CASCADE 
 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
+
+CREATE TABLE log (
+
+	event_type VARCHAR(24),
+	changes_date TIMESTAMP, 
+	username VARCHAR (24),
+    
+)ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;

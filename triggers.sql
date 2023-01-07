@@ -1,3 +1,77 @@
+#-- 3.1.4.1
+DROP TRIGGER IF EXISTS log 
+DELIMITER $
+
+CREATE TRIGGER log AFTER INSERT ON trip
+FOR EACH ROW
+BEGIN
+	INSERT INTO log(event_type, changes_date, username) VALUES (
+		CASE 
+			WHEN INSERTING THEN 'INSERT'
+			WHEN UPDATING THEN 'UPDATE'
+			ELSE 'DELETE'
+		END,
+		OLD.id,
+		USER
+	);
+END$
+
+CREATE TRIGGER log AFTER INSERT ON reservation
+FOR EACH ROW
+BEGIN
+	INSERT INTO log(event_type, changes_date, username) VALUES (
+		CASE 
+			WHEN INSERTING THEN 'INSERT'
+			WHEN UPDATING THEN 'UPDATE'
+			ELSE 'DELETE'
+		END,
+		OLD.id,
+		USER
+	);
+END$
+
+CREATE TRIGGER log AFTER INSERT ON event
+FOR EACH ROW
+BEGIN
+	INSERT INTO log(event_type, changes_date, username) VALUES (
+		CASE 
+			WHEN INSERTING THEN 'INSERT'
+			WHEN UPDATING THEN 'UPDATE'
+			ELSE 'DELETE'
+		END,
+		OLD.id,
+		USER
+	);
+END$
+
+CREATE TRIGGER log AFTER INSERT ON travel_to
+FOR EACH ROW
+BEGIN
+	INSERT INTO log(event_type, changes_date, username) VALUES (
+		CASE 
+			WHEN INSERTING THEN 'INSERT'
+			WHEN UPDATING THEN 'UPDATE'
+			ELSE 'DELETE'
+		END,
+		OLD.id,
+		USER
+	);
+END$
+
+CREATE TRIGGER log AFTER INSERT ON destination
+FOR EACH ROW
+BEGIN
+	INSERT INTO log(event_type, changes_date, username) VALUES (
+		CASE 
+			WHEN INSERTING THEN 'INSERT'
+			WHEN UPDATING THEN 'UPDATE'
+			ELSE 'DELETE'
+		END,
+		OLD.id,
+		USER
+	);
+END$
+
 #-- 3.1.4.2
 
 DROP TRIGGER IF EXISTS stop_update;
