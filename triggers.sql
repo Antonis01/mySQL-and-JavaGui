@@ -1,5 +1,5 @@
 #-- 3.1.4.1
-DROP TRIGGER IF EXISTS log 
+DROP TRIGGER IF EXISTS log;
 DELIMITER $
 
 CREATE TRIGGER log AFTER INSERT ON trip
@@ -15,7 +15,9 @@ BEGIN
 		USER
 	);
 END$
+DELIMITER ;
 
+DELIMITER $
 CREATE TRIGGER log AFTER INSERT ON reservation
 FOR EACH ROW
 BEGIN
@@ -29,7 +31,9 @@ BEGIN
 		USER
 	);
 END$
+DELIMITER ;
 
+DELIMITER $
 CREATE TRIGGER log AFTER INSERT ON event
 FOR EACH ROW
 BEGIN
@@ -43,7 +47,9 @@ BEGIN
 		USER
 	);
 END$
+DELIMITER ;
 
+DELIMITER $
 CREATE TRIGGER log AFTER INSERT ON travel_to
 FOR EACH ROW
 BEGIN
@@ -57,7 +63,9 @@ BEGIN
 		USER
 	);
 END$
+DELIMITER ;
 
+DELIMITER $
 CREATE TRIGGER log AFTER INSERT ON destination
 FOR EACH ROW
 BEGIN
@@ -71,6 +79,7 @@ BEGIN
 		USER
 	);
 END$
+DELIMITER ;
 
 #-- 3.1.4.2
 
@@ -81,7 +90,7 @@ CREATE TRIGGER stop_update AFTER INSERT ON trip
 FOR EACH ROW
 BEGIN
 	
-	IF (SELECT COUNT(*) FROM reservation WHERE res_tr_id = NEW.tr_id) > 0 THEN
+	#IF (SELECT COUNT(*) FROM reservation WHERE res_tr_id = NEW.tr_id) > 0 THEN
 		
 		IF NEW.tr_departure <> tr_departure THEN
                 	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'You cannot update the date of departure';
@@ -95,7 +104,7 @@ BEGIN
                 	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'You cannot update the cost of the trip';
         	END IF; 
 	
-	END IF;
+	#END IF;
 END $
 
 DELIMITER ;
