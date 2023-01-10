@@ -254,7 +254,7 @@ CREATE TABLE reservation_offers(
 CREATE TABLE log(
 
 	event_type VARCHAR(24),
-	Table_name VARCHAR(50), 
+	table_name VARCHAR(50), 
 	username VARCHAR (24)
     
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
