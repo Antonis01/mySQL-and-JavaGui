@@ -1,85 +1,149 @@
 #-- 3.1.4.1
-DROP TRIGGER IF EXISTS log;
+DROP TRIGGER IF EXISTS insert_trip_log;
 DELIMITER $
-
-CREATE TRIGGER log AFTER INSERT ON trip
-FOR EACH ROW
+CREATE TRIGGER insert_trip_log AFTER INSERT  ON trip
+FOR EACH ROW  
 BEGIN
-	INSERT INTO log(event_type, changes_date, username) VALUES (
-		CASE 
-			WHEN INSERTING THEN 'INSERT'
-			WHEN UPDATING THEN 'UPDATE'
-			ELSE 'DELETE'
-		END,
-		OLD.id,
-		USER
-	);
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('INSERT', 'TRIP', NEW.user);
 END$
 DELIMITER ;
 
+DROP TRIGGER IF EXISTS update_trip_log;
 DELIMITER $
-CREATE TRIGGER log AFTER INSERT ON reservation
-FOR EACH ROW
+CREATE TRIGGER update_trip_log AFTER UPDATE ON trip
+FOR EACH ROW  
 BEGIN
-	INSERT INTO log(event_type, changes_date, username) VALUES (
-		CASE 
-			WHEN INSERTING THEN 'INSERT'
-			WHEN UPDATING THEN 'UPDATE'
-			ELSE 'DELETE'
-		END,
-		OLD.id,
-		USER
-	);
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('UPDATE', 'TRIP', NEW.user);
 END$
 DELIMITER ;
 
+DROP TRIGGER IF EXISTS delete_trip_log;
 DELIMITER $
-CREATE TRIGGER log AFTER INSERT ON event
-FOR EACH ROW
+CREATE TRIGGER delete_trip_log AFTER DELETE ON trip
+FOR EACH ROW  
 BEGIN
-	INSERT INTO log(event_type, changes_date, username) VALUES (
-		CASE 
-			WHEN INSERTING THEN 'INSERT'
-			WHEN UPDATING THEN 'UPDATE'
-			ELSE 'DELETE'
-		END,
-		OLD.id,
-		USER
-	);
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('DELETE', 'TRIP', NEW.user);
 END$
 DELIMITER ;
 
+DROP TRIGGER IF EXISTS insert_reservation_log;
 DELIMITER $
-CREATE TRIGGER log AFTER INSERT ON travel_to
-FOR EACH ROW
+CREATE TRIGGER insert_reservation_log AFTER INSERT  ON reservation
 BEGIN
-	INSERT INTO log(event_type, changes_date, username) VALUES (
-		CASE 
-			WHEN INSERTING THEN 'INSERT'
-			WHEN UPDATING THEN 'UPDATE'
-			ELSE 'DELETE'
-		END,
-		OLD.id,
-		USER
-	);
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('INSERT', 'RESERVATION', NEW.user);
 END$
 DELIMITER ;
 
+DROP TRIGGER IF EXISTS update_reservation_log;
 DELIMITER $
-CREATE TRIGGER log AFTER INSERT ON destination
-FOR EACH ROW
+CREATE TRIGGER update_reservation_log AFTER UPDATE  ON reservation
 BEGIN
-	INSERT INTO log(event_type, changes_date, username) VALUES (
-		CASE 
-			WHEN INSERTING THEN 'INSERT'
-			WHEN UPDATING THEN 'UPDATE'
-			ELSE 'DELETE'
-		END,
-		OLD.id,
-		USER
-	);
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('UPDATE', 'RESERVATION', NEW.user);
 END$
 DELIMITER ;
+
+DROP TRIGGER IF EXISTS delete_reservation_log;
+DELIMITER $
+CREATE TRIGGER delete_reservation_log AFTER DELETE ON reservation
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('DELETE', 'RESERVATION', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS insert_event_log;
+DELIMITER $
+CREATE TRIGGER insert_event_log AFTER INSERT  ON event
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('INSERT', 'EVENT', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS update_event_log;
+DELIMITER $
+CREATE TRIGGER update_event_log AFTER UPDATE  ON event
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('UPDATE', 'EVENT', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS delete_event_log;
+DELIMITER $
+CREATE TRIGGER delete_event_log AFTER DELETE ON event
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('DELETE', 'EVENT', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS insert_travel_to_log;
+DELIMITER $
+CREATE TRIGGER insert_travel_to_log AFTER INSERT  ON travel_to
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('INSERT', 'TRAVEL_TO', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS update_travel_to_log;
+DELIMITER $
+CREATE TRIGGER update_travel_to_log AFTER UPDATE  ON travel_to
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('UPDATE', 'TRAVEL_TO', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS delete_travel_to_log;
+DELIMITER $
+CREATE TRIGGER delete_travel_to_log AFTER DELETE ON travel_to
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('DELETE', 'TRAVEL_TO', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS insert_destination_log;
+DELIMITER $
+CREATE TRIGGER insert_destination_log AFTER INSERT  ON destination
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('INSERT', 'DESTINATION', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS update_destination_log;
+DELIMITER $
+CREATE TRIGGER update_destination_log AFTER UPDATE  ON destination
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('UPDATE', 'DESTINATION', NEW.user);
+END$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS delete_destination_log;
+DELIMITER $
+CREATE TRIGGER delete_destination_log AFTER DELETE ON destination
+FOR EACH ROW  
+BEGIN
+  INSERT INTO log (event_type, table_name, user)
+  VALUES ('DELETE', 'DESTINATION', NEW.user);
+END$
+DELIMITER ;
+
 
 #-- 3.1.4.2
 
