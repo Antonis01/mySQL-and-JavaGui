@@ -23,37 +23,22 @@ DELIMITER ;
 #-- 3.1.3.2
 
 DROP PROCEDURE IF EXISTS sceduled_trips;
+
 DELIMITER $
-
-CREATE PROCEDURE sceduled_trips (IN branchcode INT(10),IN date1 DATETIME, IN date2 DATETIME)
+CREATE PROCEDURE sceduled_trips (IN br_code INT, IN d1 DATETIME, IN d2 DATETIME)
 BEGIN
-	
-	DECLARE branch_id INT;
-	DECLARE departure DATETIME;
-	DECLARE tripid INT;
-	DECLARE guideAT INT;
-	DECLARE driverAT INT;
-	
-	
-	SELECT tr_br_code INTO branch_id FROM trip ;
-	
-	
-	IF (branchcode = branch_id )THEN
-	
-	SELECT tr_departure INTO departure FROM  trip WHERE tr_br_code=branch_id;
-	SELECT tr_gui_AT INTO guideAT FROM trip WHERE tr_br_code=branch_id;
-	SELECT tr_drv_AT INTO driverAT FROM trip WHERE tr_br_code=branch_id;
-	SELECT tr_id INTO tripid FROM trip WHERE tr_br_code=branch_id;
-	
-	 IF (date1 < departure AND date2 > departure ) THEN
-		SELECT * FROM trip WHERE tr_br_code = branchcode ;
-		SELECT wrk_name AND wrk_lname AS QUIDE FROM worker WHERE wrk_AT = guideAT ;
-		SELECT wrk_name AND wrk_lname AS DRIVER FROM  worker WHERE wrk_AT = driverAT;
-		SELECT COUNT(*) AS RESERVATIONS FROM reservations WHERE res_tr_id = tripid;
-		END IF;
-	END IF;
-
-
+    SELECT trip.tr_departure, trip.tr_return, trip.tr_cost, trip.tr_maxseats, 
+           (trip.tr_maxseats - COUNT(reservation.res_tr_id)) AS remaining_seats,
+           COUNT(reservation.res_tr_id) AS reservations,
+           guide.wrk_name, guide.wrk_lname, 
+           driver.wrk_name, driver.wrk_lname
+    FROM trip
+    LEFT JOIN reservation ON trip.tr_id = reservation.res_tr_id
+    LEFT JOIN worker AS guide ON trip.tr_gui_AT = guide.wrk_AT
+    LEFT JOIN worker AS driver ON trip.tr_drv_AT = driver.wrk_AT
+    WHERE trip.tr_br_code = br_code
+    AND trip.tr_departure BETWEEN d1 AND d2 
+    GROUP BY trip.tr_id;
 END$
 DELIMITER ;
 
