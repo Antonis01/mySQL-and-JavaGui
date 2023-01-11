@@ -1,3 +1,5 @@
 
 *.swp
 /gui/nbproject/private/
+/gui/build/
+/gui/dist/
