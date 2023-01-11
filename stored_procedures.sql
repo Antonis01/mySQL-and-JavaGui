@@ -9,16 +9,15 @@ CREATE PROCEDURE new_driver (IN id CHAR(10), IN name VARCHAR(20), IN surname VAR
 BEGIN 
 	DECLARE branch_code VARCHAR(10);
 
-	SELECT COUNT(*) AS 'cnt', br_code INTO branch_code FROM branch
-        INNER JOIN worker ON branch.br_code = worker.wrk_br_code 
-        INNER JOIN driver ON worker.wrk_AT = driver.drv_AT
-        GROUP BY br_code 
-        ORDER BY cnt ASC;
-
+	SELECT br_code INTO branch_code FROM branch
+    	LEFT JOIN worker ON branch.br_code = worker.wrk_br_code 
+    	LEFT JOIN driver ON worker.wrk_AT = driver.drv_AT
+    	GROUP BY branch.br_code
+    	ORDER BY COUNT(driver.drv_AT) ASC LIMIT 1;
 
 	INSERT INTO worker 
 	(wrk_AT, wrk_name, wrk_lname, wrk_salary, wrk_br_code) 
-	VALUES (id, name, surname, salary, @branch_code);
+	VALUES (id, name, surname, salary, branch_code);
 
 	INSERT INTO driver (drv_AT, drv_license, drv_rout, drv_experience) VALUES (id, license_type, route, experience);
 
