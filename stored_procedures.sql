@@ -7,15 +7,20 @@ DELIMITER $
  
 CREATE PROCEDURE new_driver (IN id CHAR(10), IN name VARCHAR(20), IN surname VARCHAR(20), IN salary FLOAT(7,2), IN license_type VARCHAR(20), IN route VARCHAR(20), IN experience TINYINT(4))
 BEGIN 
+	DECLARE branch_code VARCHAR(10);
 
-	#-- Count drivers
-	#-- Find the branch with the smallest amount of drivers
+	SELECT COUNT(*) AS 'cnt', br_code INTO branch_code FROM branch
+        INNER JOIN worker ON branch.br_code = worker.wrk_br_code 
+        INNER JOIN driver ON worker.wrk_AT = driver.drv_AT
+        GROUP BY br_code 
+        ORDER BY cnt ASC;
 
-	SELECT COUNT(*) INTO @driver_count FROM driver
-	INNER JOIN worker ON drv_AT = wrk_AT  
-	INNER JOIN branch ON wrk_br_code = br_code 
-	WHERE MIN(@driver_count);
 
+	INSERT INTO worker 
+	(wrk_AT, wrk_name, wrk_lname, wrk_salary, wrk_br_code) 
+	VALUES (id, name, surname, salary, @branch_code);
+
+	INSERT INTO driver (drv_AT, drv_license, drv_rout, drv_experience) VALUES (id, license_type, route, experience);
 
 END $
 DELIMITER ;
@@ -38,7 +43,7 @@ BEGIN
     LEFT JOIN worker AS driver ON trip.tr_drv_AT = driver.wrk_AT
     WHERE trip.tr_br_code = br_code
     AND trip.tr_departure BETWEEN d1 AND d2 
-    GROUP BY trip.tr_id;
+    GROUP BY trip.tr_id, trip.tr_departure, trip.tr_return;
 END$
 DELIMITER ;
 
