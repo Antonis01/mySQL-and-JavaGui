@@ -32,6 +32,7 @@ DELIMITER ;
 DROP TRIGGER IF EXISTS insert_reservation_log;
 DELIMITER $
 CREATE TRIGGER insert_reservation_log AFTER INSERT  ON reservation
+FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
   VALUES ('INSERT', 'RESERVATION', NEW.user);
@@ -41,6 +42,7 @@ DELIMITER ;
 DROP TRIGGER IF EXISTS update_reservation_log;
 DELIMITER $
 CREATE TRIGGER update_reservation_log AFTER UPDATE  ON reservation
+FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
   VALUES ('UPDATE', 'RESERVATION', NEW.user);
@@ -70,6 +72,7 @@ DELIMITER ;
 DROP TRIGGER IF EXISTS update_event_log;
 DELIMITER $
 CREATE TRIGGER update_event_log AFTER UPDATE  ON event
+FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
   VALUES ('UPDATE', 'EVENT', NEW.user);
@@ -99,6 +102,7 @@ DELIMITER ;
 DROP TRIGGER IF EXISTS update_travel_to_log;
 DELIMITER $
 CREATE TRIGGER update_travel_to_log AFTER UPDATE  ON travel_to
+FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
   VALUES ('UPDATE', 'TRAVEL_TO', NEW.user);
@@ -128,6 +132,7 @@ DELIMITER ;
 DROP TRIGGER IF EXISTS update_destination_log;
 DELIMITER $
 CREATE TRIGGER update_destination_log AFTER UPDATE  ON destination
+FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
   VALUES ('UPDATE', 'DESTINATION', NEW.user);
