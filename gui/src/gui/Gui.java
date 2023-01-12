@@ -2,15 +2,20 @@ package gui;
 
 import java.sql.*;
 
-
-public class Gui {
+public class Gui extends LoginFrame{
 
     private static final String DB_URL = ("jdbc:mysql://localhost:3306/travel_agency");
   
     public static void main(String[] args) {
-       
+        
+
         try{
-                
+            
+            LoginFrame frm = new LoginFrame();
+            frm.setVisible(true);
+            
+            
+            /*
                 // Connect to database
                 Connection con = DriverManager.getConnection(DB_URL,"root","1234");
                 
@@ -35,8 +40,9 @@ public class Gui {
                         System.out.printf("%-8s\t", resultSet.getObject(i));
                     System.out.println();
                 }
-                
-            }catch (SQLException ex){
+                */
+        
+            }catch (RuntimeException ex){
                     ex.printStackTrace();
             }
     }   
