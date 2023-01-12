@@ -5,7 +5,7 @@ CREATE TRIGGER insert_trip_log BEFORE INSERT  ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', "TRIP", "user name");
+  VALUES ('INSERT', "TRIP", session_user());
 END$
 DELIMITER ;
 
@@ -15,7 +15,7 @@ CREATE TRIGGER update_trip_log AFTER UPDATE ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('UPDATE', 'TRIP', NEW.user);
+  VALUES ('UPDATE', 'TRIP', session_user());
 END$
 DELIMITER ;
 
@@ -25,7 +25,7 @@ CREATE TRIGGER delete_trip_log AFTER DELETE ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('DELETE', 'TRIP', NEW.user);
+  VALUES ('DELETE', 'TRIP', session_user());
 END$
 DELIMITER ;
 
@@ -35,7 +35,7 @@ CREATE TRIGGER insert_reservation_log AFTER INSERT  ON reservation
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', 'RESERVATION', NEW.user);
+  VALUES ('INSERT', 'RESERVATION', session_user());
 END$
 DELIMITER ;
 
@@ -45,7 +45,7 @@ CREATE TRIGGER update_reservation_log AFTER UPDATE  ON reservation
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('UPDATE', 'RESERVATION', NEW.user);
+  VALUES ('UPDATE', 'RESERVATION', session_user());
 END$
 DELIMITER ;
 
@@ -55,7 +55,7 @@ CREATE TRIGGER delete_reservation_log AFTER DELETE ON reservation
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('DELETE', 'RESERVATION', NEW.user);
+  VALUES ('DELETE', 'RESERVATION', session_user());
 END$
 DELIMITER ;
 
@@ -65,7 +65,7 @@ CREATE TRIGGER insert_event_log AFTER INSERT  ON event
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', 'EVENT', NEW.user);
+  VALUES ('INSERT', 'EVENT',session_user());
 END$
 DELIMITER ;
 
@@ -75,7 +75,7 @@ CREATE TRIGGER update_event_log AFTER UPDATE  ON event
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('UPDATE', 'EVENT', NEW.user);
+  VALUES ('UPDATE', 'EVENT', session_user());
 END$
 DELIMITER ;
 
@@ -85,7 +85,7 @@ CREATE TRIGGER delete_event_log AFTER DELETE ON event
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('DELETE', 'EVENT', NEW.user);
+  VALUES ('DELETE', 'EVENT', session_user());
 END$
 DELIMITER ;
 
@@ -95,7 +95,7 @@ CREATE TRIGGER insert_travel_to_log AFTER INSERT  ON travel_to
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', 'TRAVEL_TO', NEW.user);
+  VALUES ('INSERT', 'TRAVEL_TO', session_user());
 END$
 DELIMITER ;
 
@@ -105,7 +105,7 @@ CREATE TRIGGER update_travel_to_log AFTER UPDATE  ON travel_to
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('UPDATE', 'TRAVEL_TO', NEW.user);
+  VALUES ('UPDATE', 'TRAVEL_TO', session_user());
 END$
 DELIMITER ;
 
@@ -115,7 +115,7 @@ CREATE TRIGGER delete_travel_to_log AFTER DELETE ON travel_to
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('DELETE', 'TRAVEL_TO', NEW.user);
+  VALUES ('DELETE', 'TRAVEL_TO', session_user());
 END$
 DELIMITER ;
 
@@ -125,7 +125,7 @@ CREATE TRIGGER insert_destination_log AFTER INSERT  ON destination
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', 'DESTINATION', NEW.user);
+  VALUES ('INSERT', 'DESTINATION', session_user());
 END$
 DELIMITER ;
 
@@ -135,7 +135,7 @@ CREATE TRIGGER update_destination_log AFTER UPDATE  ON destination
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('UPDATE', 'DESTINATION', NEW.user);
+  VALUES ('UPDATE', 'DESTINATION', session_user());
 END$
 DELIMITER ;
 
@@ -145,7 +145,7 @@ CREATE TRIGGER delete_destination_log AFTER DELETE ON destination
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('DELETE', 'DESTINATION', NEW.user);
+  VALUES ('DELETE', 'DESTINATION', session_user());
 END$
 DELIMITER ;
 
