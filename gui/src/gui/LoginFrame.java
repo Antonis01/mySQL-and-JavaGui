@@ -11,8 +11,16 @@ import java.sql.*;
  */
 public class LoginFrame extends javax.swing.JFrame {
     
-    private static final String DB_URL = ("jdbc:mysql://localhost:3306/travel_agency");
-
+    private static LoginFrame frame = new LoginFrame();
+    
+    public static void getLoginFrame(boolean dis){
+        //makes the login frame visible or disables it.
+        if(dis)
+            frame.setVisible(dis);
+        else 
+            frame.dispose();
+    }
+    
     /**
      * Creates new form NewJFrame
      */
@@ -29,11 +37,52 @@ public class LoginFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jPopupMenu3 = new javax.swing.JPopupMenu();
+        jDialog1 = new javax.swing.JDialog();
+        jFrame1 = new javax.swing.JFrame();
+        jColorChooser1 = new javax.swing.JColorChooser();
+        jColorChooser2 = new javax.swing.JColorChooser();
         username_login_field = new javax.swing.JTextField();
         login_button = new javax.swing.JButton();
         password_login_field = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        jMenu3.setText("jMenu3");
+
+        jMenu4.setText("jMenu4");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,12 +141,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(password_login_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(login_button)
                 .addGap(19, 19, 19))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(424, 286));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void username_login_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username_login_fieldActionPerformed
@@ -109,13 +159,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_login_buttonMouseClicked
 
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
+        //getting the text from the text fields in the login frame 
         String username=username_login_field.getText();
         String password=password_login_field.getText();
         
         try{
-            Connection con = DriverManager.getConnection(DB_URL,"root","1234");
-
-            // Initialize a statement object for executing queries to database
+            //connecting to the MySQL server
+            Connection con = DriverManager.getConnection(Gui.DB_URL,"root","1234");
+          
+            //Getting the workers' ids and lastnames that are also an it.
             Statement stmtU = con.createStatement();
             ResultSet getUsernames = stmtU.executeQuery("SELECT wrk_AT,wrk_lname FROM worker INNER JOIN it ON it_at=wrk_AT");
 
@@ -124,6 +176,8 @@ public class LoginFrame extends javax.swing.JFrame {
             boolean existsU = false;
             boolean existsP = false;
                     
+                    //comparing the username from the text field to the usernames from 
+                    //the database. If the user exists we save its' id for later.
                     while(getUsernames.next()){
                             String usr  = getUsernames.getString("wrk_lname");
                             String usrAT = getUsernames.getString("wrk_AT");
@@ -136,10 +190,14 @@ public class LoginFrame extends javax.swing.JFrame {
                     }        
                     
 
+                    //Getting it users' id and password
                     Statement stmtP = con.createStatement();
                     ResultSet getPasswords = stmtP.executeQuery("SELECT it_at,passwords FROM it INNER JOIN worker ON it_at=wrk_AT");
                     
-                    
+                    //Comparing the passwords from the database with the one that
+                    //the user gave in the text field and at the same time we 
+                    //compare the id that we saved before with the id's from the 
+                    //it table so we can find the correct password.
                     while(getPasswords.next()){
                         String psw = getPasswords.getString("passwords");
                         String at = getPasswords.getString("it_at");
@@ -149,20 +207,22 @@ public class LoginFrame extends javax.swing.JFrame {
                                 break;
                         }
                     }
-
+                    
+                    //if the username and password are correct we close the login frame
+                    //and open the action frame 
                     if(existsU && existsP){
                         System.out.println("Logged in");
-
+                        ActionFrame af = new ActionFrame();
+                        getLoginFrame(false);
+                        af.setVisible(true);
+                        
                     }else{
-                        System.out.println("Wrong user");
+                        System.out.println("Wrong password or user does not exists");
                     }
 
         }catch(SQLException ex){
                     ex.printStackTrace();
         }
-        
-        
-        
     }//GEN-LAST:event_login_buttonActionPerformed
 
     private void password_login_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_login_fieldActionPerformed
@@ -171,8 +231,19 @@ public class LoginFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JColorChooser jColorChooser1;
+    private javax.swing.JColorChooser jColorChooser2;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JButton login_button;
     private javax.swing.JPasswordField password_login_field;
     private javax.swing.JTextField username_login_field;
