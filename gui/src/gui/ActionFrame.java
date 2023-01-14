@@ -49,7 +49,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuBarFrame = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         InserDataButton = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -68,8 +68,6 @@ public class ActionFrame extends javax.swing.JFrame {
         WorkerInfoButton = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
         ViewChangesButton = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        ViewButton = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -145,7 +143,7 @@ public class ActionFrame extends javax.swing.JFrame {
         AddNewITButton.setText("Add New IT");
         jMenu1.add(AddNewITButton);
 
-        jMenuBar1.add(jMenu1);
+        MenuBarFrame.add(jMenu1);
 
         jMenu2.setText("Info");
 
@@ -172,6 +170,11 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu2.add(jSeparator6);
 
         WorkerInfoButton.setText("Worker Info");
+        WorkerInfoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WorkerInfoButtonActionPerformed(evt);
+            }
+        });
         jMenu2.add(WorkerInfoButton);
         jMenu2.add(jSeparator7);
 
@@ -183,21 +186,9 @@ public class ActionFrame extends javax.swing.JFrame {
         });
         jMenu2.add(ViewChangesButton);
 
-        jMenuBar1.add(jMenu2);
+        MenuBarFrame.add(jMenu2);
 
-        jMenu3.setText("View");
-
-        ViewButton.setText("Clean Screen");
-        ViewButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewButtonActionPerformed(evt);
-            }
-        });
-        jMenu3.add(ViewButton);
-
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBarFrame);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,22 +221,29 @@ public class ActionFrame extends javax.swing.JFrame {
     private void BranchInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchInfoButtonActionPerformed
         
         BranchInfo bi = new BranchInfo();
-        //bi.getBranchFrame(true);
         bi.setVisible(true);
         
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String sql = "select br_code, br_street, br_num, br_city, wrk_name, wrk_lname from branch inner join worker on wrk_br_code=br_code inner join _admin on adm_AT=wrk_AT ORDER BY br_code ASC";
+        String sql = "SELECT b.br_code, b.br_street, b.br_num, b.br_city, w.wrk_name, w.wrk_lname, br_res.total_reservations, br_res.total_income FROM branch AS b "
+                + "INNER JOIN worker AS w ON w.wrk_br_code = b.br_code "
+                + "INNER JOIN _admin AS a ON a.adm_AT = w.wrk_AT "
+                + "INNER JOIN (SELECT tr_br_code, COUNT(r.res_tr_id) AS total_reservations, "
+                + "SUM(t.tr_cost) AS total_income FROM  trip AS t "
+                + "INNER JOIN reservation AS r ON r.res_tr_id = t.tr_id "
+                + "GROUP BY tr_br_code) AS br_res ON br_res.tr_br_code = b.br_code "
+                + "ORDER BY br_code ASC";
+        
         DefaultTableModel model = (DefaultTableModel)bi.branchInfoTable.getModel();
         model.setRowCount(0);
         model.setRowCount(10);
 
         try{
-            PreparedStatement pst=  con.getConnection().prepareStatement(sql);
+            PreparedStatement pst =  con.getConnection().prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             model.setRowCount(0);
             while(rs.next()){
-                model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)});
+                model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)});
             }
 
             
@@ -257,15 +255,76 @@ public class ActionFrame extends javax.swing.JFrame {
 
     private void ViewChangesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewChangesButtonActionPerformed
         // TODO add your handling code here:
+        LogInfoFrame li = new LogInfoFrame();
+        li.setVisible(true);
+        
+        ConnectToMySQL con = new ConnectToMySQL();
+
+        String sql = "SELECT table_name, event_type, username FROM log";
+        
+        DefaultTableModel model = (DefaultTableModel)li.LogInfoTable.getModel();
+        model.setRowCount(0);
+        model.setRowCount(1);
+
+        try{
+            PreparedStatement pst =  con.getConnection().prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            model.setRowCount(0);
+            while(rs.next()){
+                model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3)});
+            }
+            
+        }catch(Exception ex){
+            System.out.println("Error: " + ex);
+        }
+        
     }//GEN-LAST:event_ViewChangesButtonActionPerformed
 
     private void InserDataButtonComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_InserDataButtonComponentShown
         // TODO add your handling code here:
     }//GEN-LAST:event_InserDataButtonComponentShown
 
-    private void ViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewButtonActionPerformed
+    private void WorkerInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkerInfoButtonActionPerformed
+        // TODO add your handling code here:
+        WorkerInfoFrame wi = new WorkerInfoFrame();
+        wi.setVisible(true);
+        
+        ConnectToMySQL con = new ConnectToMySQL();
 
-    }//GEN-LAST:event_ViewButtonActionPerformed
+        String sql = "SELECT br_code, wrk_name, wrk_lname, wrk_salary FROM branch INNER JOIN worker ON br_code=wrk_br_code ORDER BY br_code ASC";
+        String sql2 = "SELECT SUM(wrk_salary) FROM worker";
+        
+        DefaultTableModel model = (DefaultTableModel)wi.WorkerInfoTable.getModel();
+        model.setRowCount(0);
+        model.setRowCount(10);
+
+        DefaultTableModel model2 = (DefaultTableModel)wi.totalSalaryTable.getModel();
+        model2.setRowCount(1);
+        model2.setRowCount(1);
+        
+        try{
+            PreparedStatement pst =  con.getConnection().prepareStatement(sql);
+            PreparedStatement pst2 = con.getConnection().prepareStatement(sql2);
+            
+            ResultSet rs = pst.executeQuery();
+            ResultSet rs2 = pst2.executeQuery();
+            
+            model.setRowCount(0);
+            model2.setRowCount(0);
+            
+            while(rs.next()){
+                model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
+            }
+            
+            while(rs2.next()){
+                model2.addRow(new String[]{rs2.getString(1)});
+                break;
+            }
+            
+        }catch(Exception ex){
+            System.out.println("Error: " + ex);
+        }
+    }//GEN-LAST:event_WorkerInfoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,8 +368,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem DeleteDataButton;
     private javax.swing.JMenuItem EditDataButton;
     private javax.swing.JMenuItem InserDataButton;
+    private javax.swing.JMenuBar MenuBarFrame;
     private javax.swing.JMenuItem TripInfoButton;
-    private javax.swing.JMenuItem ViewButton;
     private javax.swing.JMenuItem ViewChangesButton;
     private javax.swing.JMenuItem WorkerInfoButton;
     private java.awt.Button button1;
@@ -321,8 +380,6 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;

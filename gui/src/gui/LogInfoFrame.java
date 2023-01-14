@@ -4,20 +4,19 @@
  */
 package gui;
 
-
 /**
  *
  * @author antonis
  */
-public class BranchInfo extends javax.swing.JFrame {
+public class LogInfoFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form BranchInfo
+     * Creates new form LogInfoFrame
      */
-    public BranchInfo() {
+    public LogInfoFrame() {
         initComponents();
     }
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,90 +26,82 @@ public class BranchInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        branchInfoTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        LogInfoTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        branchInfoTable.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
+        jLabel1.setText("View Changes");
+
+        LogInfoTable.setForeground(new java.awt.Color(102, 102, 102));
+        LogInfoTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Branch Code", "Branch Street", "Branch Number", "Branch City", "Admin Name", "Admin LastName", "Total Reservations", "Total Earnings"
+                "Table Name", "Event", "Username"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        branchInfoTable.setToolTipText("");
-        branchInfoTable.setFocusable(false);
-        branchInfoTable.addComponentListener(new java.awt.event.ComponentAdapter() {
+        LogInfoTable.setToolTipText("");
+        LogInfoTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        LogInfoTable.setFocusable(false);
+        LogInfoTable.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
-                branchInfoTableComponentHidden(evt);
+                LogInfoTableComponentHidden(evt);
             }
         });
-        branchInfoTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        LogInfoTable.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                branchInfoTablePropertyChange(evt);
+                LogInfoTablePropertyChange(evt);
             }
         });
-        jScrollPane1.setViewportView(branchInfoTable);
-
-        jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Branch Info");
+        jScrollPane1.setViewportView(LogInfoTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                        .addGap(890, 890, 890))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addGap(36, 36, 36))))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                        .addGap(817, 817, 817)))
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addGap(47, 47, 47))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                .addGap(27, 27, 27))
         );
 
-        setSize(new java.awt.Dimension(1090, 352));
+        setSize(new java.awt.Dimension(1084, 201));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void branchInfoTableComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_branchInfoTableComponentHidden
+    private void LogInfoTableComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_LogInfoTableComponentHidden
         // TODO add your handling code here:
-    }//GEN-LAST:event_branchInfoTableComponentHidden
+    }//GEN-LAST:event_LogInfoTableComponentHidden
 
-    private void branchInfoTablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_branchInfoTablePropertyChange
+    private void LogInfoTablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_LogInfoTablePropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_branchInfoTablePropertyChange
+    }//GEN-LAST:event_LogInfoTablePropertyChange
 
     /**
      * @param args the command line arguments
@@ -129,26 +120,26 @@ public class BranchInfo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BranchInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogInfoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BranchInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogInfoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BranchInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogInfoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BranchInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogInfoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BranchInfo().setVisible(true);
+                new LogInfoFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTable branchInfoTable;
+    public javax.swing.JTable LogInfoTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
