@@ -164,11 +164,11 @@ public class LoginFrame extends javax.swing.JFrame {
         String password=password_login_field.getText();
         
         try{
-            //connecting to the MySQL server
-            Connection con = DriverManager.getConnection(Gui.DB_URL,"root","1234");
-          
+           
+            ConnectToMySQL con = new ConnectToMySQL();
+            
             //Getting the workers' ids and lastnames that are also an it.
-            Statement stmtU = con.createStatement();
+            Statement stmtU = con.getConnection().createStatement();
             ResultSet getUsernames = stmtU.executeQuery("SELECT wrk_AT,wrk_lname FROM worker INNER JOIN it ON it_at=wrk_AT");
 
             
@@ -191,7 +191,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     
 
                     //Getting it users' id and password
-                    Statement stmtP = con.createStatement();
+                    Statement stmtP = con.getConnection().createStatement();
                     ResultSet getPasswords = stmtP.executeQuery("SELECT it_at,passwords FROM it INNER JOIN worker ON it_at=wrk_AT");
                     
                     //Comparing the passwords from the database with the one that
@@ -213,7 +213,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     if(existsU && existsP){
                         System.out.println("Logged in");
                         ActionFrame af = new ActionFrame();
-                        getLoginFrame(false);
+                        getLoginFrame(false);                    
                         af.setVisible(true);
                         
                     }else{
