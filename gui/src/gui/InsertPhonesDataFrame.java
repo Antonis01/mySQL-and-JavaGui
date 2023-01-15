@@ -36,7 +36,7 @@ public class InsertPhonesDataFrame extends javax.swing.JFrame {
         PhoneNumTextField = new javax.swing.JTextField();
         DoneButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
         jLabel1.setText("Insert Phone Numbers");
@@ -101,7 +101,8 @@ public class InsertPhonesDataFrame extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(410, 259));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BranchCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchCodeTextFieldActionPerformed
