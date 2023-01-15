@@ -36,7 +36,7 @@ public class CustomerInfoFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         CountInfoTable = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
         jLabel1.setText("Customers with the same lastnames info ");

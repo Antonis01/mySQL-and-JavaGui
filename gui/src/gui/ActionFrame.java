@@ -141,6 +141,11 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu1.add(jSeparator3);
 
         AddNewITButton.setText("Add New IT");
+        AddNewITButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNewITButtonActionPerformed(evt);
+            }
+        });
         jMenu1.add(AddNewITButton);
 
         MenuBarFrame.add(jMenu1);
@@ -336,6 +341,12 @@ public class ActionFrame extends javax.swing.JFrame {
         CustomerInfoFrame ci = new CustomerInfoFrame();
         ci.setVisible(true);
     }//GEN-LAST:event_CustomerInfoButtonActionPerformed
+
+    private void AddNewITButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewITButtonActionPerformed
+        // TODO add your handling code here:
+        AddNewITFrame it = new AddNewITFrame();
+        it.setVisible(true);
+    }//GEN-LAST:event_AddNewITButtonActionPerformed
 
     /**
      * @param args the command line arguments
