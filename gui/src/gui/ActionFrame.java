@@ -51,7 +51,10 @@ public class ActionFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         InserDataButton = new javax.swing.JMenuItem();
+        jSeparator8 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -112,7 +115,9 @@ public class ActionFrame extends javax.swing.JFrame {
 
         jMenu1.setText("Edit");
 
-        InserDataButton.setText("Insert Data");
+        jMenu4.setText("Insert Data");
+
+        InserDataButton.setText("Branch");
         InserDataButton.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 InserDataButtonComponentShown(evt);
@@ -123,7 +128,18 @@ public class ActionFrame extends javax.swing.JFrame {
                 InserDataButtonActionPerformed(evt);
             }
         });
-        jMenu1.add(InserDataButton);
+        jMenu4.add(InserDataButton);
+        jMenu4.add(jSeparator8);
+
+        jMenuItem3.setText("Phones");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem3);
+
+        jMenu1.add(jMenu4);
         jMenu1.add(jSeparator1);
 
         EditDataButton.setText("Edit Data");
@@ -216,6 +232,8 @@ public class ActionFrame extends javax.swing.JFrame {
 
     private void InserDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserDataButtonActionPerformed
         // TODO add your handling code here:
+        InsertBranchDataFrame ib = new InsertBranchDataFrame();
+        ib.setVisible(true);
     }//GEN-LAST:event_InserDataButtonActionPerformed
 
     private void EditDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditDataButtonActionPerformed
@@ -364,6 +382,12 @@ public class ActionFrame extends javax.swing.JFrame {
         it.setVisible(true);
     }//GEN-LAST:event_AddNewITButtonActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        InsertPhonesDataFrame ip = new InsertPhonesDataFrame();
+        ip.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -418,10 +442,12 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
@@ -433,6 +459,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JPopupMenu.Separator jSeparator8;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;

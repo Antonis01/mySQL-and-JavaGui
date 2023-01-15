@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author antonis
@@ -203,7 +204,7 @@ public class AddNewITFrame extends javax.swing.JFrame {
 
             pstmt.executeUpdate();
             pstmt2.executeUpdate();
-           
+            JOptionPane.showMessageDialog(rootPane,"Insert Successful");
             pstmt.close();
             pstmt2.close();
             
@@ -211,10 +212,13 @@ public class AddNewITFrame extends javax.swing.JFrame {
             
             
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane,"Insert Unuccessful");
             Logger.getLogger(AddNewITFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane,"Insert Unuccessful");
             System.out.println("Invalid input");
         } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(rootPane,"Insert Unuccessful");
             Logger.getLogger(AddNewITFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_RegisterButtonActionPerformed

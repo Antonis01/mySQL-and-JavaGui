@@ -4,6 +4,7 @@
  */
 package gui;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -85,6 +86,7 @@ public class LoginFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.Color.darkGray);
 
         username_login_field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username_login_field.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +223,7 @@ public class LoginFrame extends javax.swing.JFrame {
                         af.setVisible(true);
                         
                     }else{
+                        JOptionPane.showMessageDialog(rootPane,"Wrong password or user does not exists");
                         System.out.println("Wrong password or user does not exists");
                     }
                     
