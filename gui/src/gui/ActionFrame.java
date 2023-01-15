@@ -157,6 +157,11 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu2.add(jSeparator4);
 
         CustomerInfoButton.setText("Customer Info");
+        CustomerInfoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerInfoButtonActionPerformed(evt);
+            }
+        });
         jMenu2.add(CustomerInfoButton);
         jMenu2.add(jSeparator5);
 
@@ -325,6 +330,12 @@ public class ActionFrame extends javax.swing.JFrame {
             System.out.println("Error: " + ex);
         }
     }//GEN-LAST:event_WorkerInfoButtonActionPerformed
+
+    private void CustomerInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerInfoButtonActionPerformed
+        // TODO add your handling code here:
+        CustomerInfoFrame ci = new CustomerInfoFrame();
+        ci.setVisible(true);
+    }//GEN-LAST:event_CustomerInfoButtonActionPerformed
 
     /**
      * @param args the command line arguments
