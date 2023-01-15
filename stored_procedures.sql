@@ -86,11 +86,21 @@ BEGIN
 END $
 DELIMITER ;
 
-#-- Example of calling the procedure
-CALL pay_in_advance(100,150);
-
-
 #-- 3.1.3.4.b
+
+DROP PROCEDURE IF EXISTS find_lastname_count;
+DELIMITER $
+
+CREATE PROCEDURE find_lastname_count(IN search_lname VARCHAR(20))
+BEGIN 
+        # We check if there are more than 1 same lastnames in the table reservation_offers 
+        IF (SELECT count(lastname) FROM reservation_offers WHERE lastname LIKE search_lname) > 1 THEN 
+                SELECT count(lastname) AS "Same Last Name in each offer",offer_tr_id AS "TripID Offer" FROM reservation_offers WHERE lastname LIKE search_lname GROUP BY offer_tr_id;
+        END IF;
+END $
+
+DELIMITER ;
+
 
 DROP PROCEDURE IF EXISTS find_lastname;
 DELIMITER $
@@ -98,15 +108,10 @@ DELIMITER $
 CREATE PROCEDURE find_lastname(IN search_lname VARCHAR(20))
 BEGIN
 
-	SELECT lastname AS "Last Name",firstname AS "First Name",offer_tr_id AS "TripID Offer" FROM reservation_offers WHERE lastname LIKE search_lname;
+        SELECT lastname AS "Last Name",firstname AS "First Name",offer_tr_id AS "TripID Offer" FROM reservation_offers WHERE lastname LIKE search_lname ORDER BY offer_tr_id ASC;
 
-	# We check if there are more than 1 same lastnames in the table reservation_offers 
-        IF (SELECT count(lastname) FROM reservation_offers WHERE lastname LIKE search_lname) > 1 THEN 
-		SELECT count(lastname) AS "Same Last Name in each offer",offer_tr_id AS "TripID Offer" FROM reservation_offers WHERE lastname LIKE search_lname GROUP BY offer_tr_id;
-	END IF;
+        # We call the procedure to count the customers with the same last name
+        CALL find_lastname_count(search_lname);
 END $
 
 DELIMITER ;
-
-#-- Example of calling the procedure
-CALL find_lastname("Walter");
