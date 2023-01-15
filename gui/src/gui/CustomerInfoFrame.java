@@ -152,11 +152,12 @@ public class CustomerInfoFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1231, 580));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
@@ -189,6 +190,12 @@ public class CustomerInfoFrame extends javax.swing.JFrame {
              while(rs2.next())
                  model2.addRow(new String[]{rs2.getString(1),rs2.getString(2)});
 
+             pst.close();
+             pst2.close();
+             rs.close();
+             rs2.close();
+             con.getConnection().close();
+             
         }catch(Exception ex){
             System.out.println("Error: " + ex);
         }

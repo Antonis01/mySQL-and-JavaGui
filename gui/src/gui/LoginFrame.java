@@ -223,6 +223,8 @@ public class LoginFrame extends javax.swing.JFrame {
                     }else{
                         System.out.println("Wrong password or user does not exists");
                     }
+                    
+                    stmtP.getConnection().close();
 
         }catch(SQLException ex){
                     ex.printStackTrace();

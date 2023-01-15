@@ -204,15 +204,14 @@ public class ActionFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
+            .addGap(0, 1288, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(485, 60));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InserDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserDataButtonActionPerformed
@@ -226,6 +225,8 @@ public class ActionFrame extends javax.swing.JFrame {
 
     private void TripInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripInfoButtonActionPerformed
         // TODO add your handling code here:
+        TripInfoFrame ti = new TripInfoFrame();
+        ti.setVisible(true);
     }//GEN-LAST:event_TripInfoButtonActionPerformed
 
     private void BranchInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchInfoButtonActionPerformed
@@ -256,6 +257,9 @@ public class ActionFrame extends javax.swing.JFrame {
                 model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)});
             }
 
+            pst.close();
+            rs.close();
+            con.getConnection().close();
             
         }catch(Exception ex){
             System.out.println("Error: " + ex);
@@ -280,13 +284,19 @@ public class ActionFrame extends javax.swing.JFrame {
             PreparedStatement pst =  con.getConnection().prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
             model.setRowCount(0);
+            
             while(rs.next()){
                 model.addRow(new String[]{rs.getString(1),rs.getString(2),rs.getString(3)});
             }
             
+            pst.close();
+            rs.close();
+            con.getConnection().close();
+            
         }catch(Exception ex){
             System.out.println("Error: " + ex);
         }
+        
         
     }//GEN-LAST:event_ViewChangesButtonActionPerformed
 
@@ -330,6 +340,12 @@ public class ActionFrame extends javax.swing.JFrame {
                 model2.addRow(new String[]{rs2.getString(1)});
                 break;
             }
+            
+            pst.close();
+            pst2.close();
+            rs.close();
+            rs2.close();
+            con.getConnection().close();
             
         }catch(Exception ex){
             System.out.println("Error: " + ex);
