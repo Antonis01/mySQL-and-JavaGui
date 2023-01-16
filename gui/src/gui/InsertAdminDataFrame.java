@@ -73,6 +73,12 @@ public class InsertAdminDataFrame extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel8.setText("Diploma:");
 
+        SalaryTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalaryTextFieldActionPerformed(evt);
+            }
+        });
+
         ChooseTypeAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOGISTICS", "ADMINISTRATIVE", "ACCOUNTING" }));
         ChooseTypeAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +230,10 @@ public class InsertAdminDataFrame extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_DoneButtonActionPerformed
+
+    private void SalaryTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalaryTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalaryTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

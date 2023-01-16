@@ -61,6 +61,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu8 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
@@ -93,6 +94,8 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu10 = new javax.swing.JMenu();
         UpdateBranchButton = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        UpdateAdminButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         BranchDeleteButton = new javax.swing.JMenuItem();
@@ -182,6 +185,8 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenuBar2.add(jMenu9);
 
         jMenuItem7.setText("jMenuItem7");
+
+        jMenuItem8.setText("jMenuItem8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Travel Agency");
@@ -323,6 +328,18 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu10.add(UpdateBranchButton);
+
+        jMenu11.setText("Workers");
+
+        UpdateAdminButton.setText("Admins");
+        UpdateAdminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateAdminButtonActionPerformed(evt);
+            }
+        });
+        jMenu11.add(UpdateAdminButton);
+
+        jMenu10.add(jMenu11);
 
         jMenu1.add(jMenu10);
         jMenu1.add(jSeparator2);
@@ -774,6 +791,12 @@ public class ActionFrame extends javax.swing.JFrame {
         ub.setVisible(true);
     }//GEN-LAST:event_UpdateBranchButtonActionPerformed
 
+    private void UpdateAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateAdminButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateAdminDataFrame ua = new UpdateAdminDataFrame();
+        ua.setVisible(true);
+    }//GEN-LAST:event_UpdateAdminButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -837,6 +860,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem TripDeleteButton;
     private javax.swing.JMenuItem TripInfoButton;
     private javax.swing.JMenuItem TripInsertButton;
+    private javax.swing.JMenuItem UpdateAdminButton;
     private javax.swing.JMenuItem UpdateBranchButton;
     private javax.swing.JMenuItem ViewChangesButton;
     private javax.swing.JMenuItem WorkerInfoButton;
@@ -848,6 +872,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -867,6 +892,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;

@@ -164,6 +164,11 @@
         <Property name="text" type="java.lang.String" value="jMenuItem7"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem8"/>
+      </Properties>
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="MenuBarFrame">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -319,6 +324,21 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateBranchButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <Menu class="javax.swing.JMenu" name="jMenu11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Workers"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="UpdateAdminButton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Admins"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateAdminButtonActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
               </SubComponents>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
