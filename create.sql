@@ -238,7 +238,7 @@ CREATE TABLE offers(
 
 CREATE TABLE reservation_offers(
 	
-	res_off_tr_id INT(11) NOT NULL,
+	res_off_tr_id INT(11) NOT NULL AUTO_INCREMENT,
 	lastname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
 	firstname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
 	offer_tr_id INT(11),
