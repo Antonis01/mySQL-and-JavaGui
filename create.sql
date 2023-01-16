@@ -255,9 +255,7 @@ CREATE TABLE log(
 
 	event_type VARCHAR(24),
 	table_name VARCHAR(50), 
-	username VARCHAR (20) NOT NULL,
-
-    	CONSTRAINT LOGUSER FOREIGN KEY (username) REFERENCES worker (wrk_lname)
-	ON DELETE CASCADE ON UPDATE CASCADE 
+	username VARCHAR (20) NOT NULL 
+ 
 ) ENGINE = InnoDB CHARACTER SET greek COLLATE greek_general_ci;
 
