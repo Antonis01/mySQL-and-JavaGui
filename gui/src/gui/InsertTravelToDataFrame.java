@@ -4,6 +4,8 @@
  */
 package gui;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -130,11 +132,17 @@ public class InsertTravelToDataFrame extends javax.swing.JFrame {
         try {
 
             pstmt = con.getConnection().prepareStatement(insert_travel_to);
+            
+             // Setting the format of the datetime
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            
+            java.sql.Date start_datetime = new java.sql.Date(dateFormat.parse(ArrivalTextField.getText()).getTime());
+            java.sql.Date end_datetime = new java.sql.Date(dateFormat.parse(DepartureTextField.getText()).getTime());
 
             pstmt.setInt(1, Integer.parseInt(IDTextField.getText()));
             pstmt.setInt(2, Integer.parseInt(DestinationIDTextField.getText()));
-            pstmt.setString(3, ArrivalTextField.getText());
-            pstmt.setString(4, DepartureTextField.getText());
+            pstmt.setDate(3, start_datetime);
+            pstmt.setDate(4, end_datetime);
 
             pstmt.executeUpdate();
 
@@ -149,6 +157,9 @@ public class InsertTravelToDataFrame extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane,"Insert Unsuccessful");
             System.out.println("Invalid input");
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(rootPane,"Insert Unsuccessful");
+            Logger.getLogger(InsertTravelToDataFrame.class.getName()).log(Level.SEVERE, null, ex);            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
