@@ -371,6 +371,16 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateTripButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator35">
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="UpdateEventButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Event"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateEventButtonActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
