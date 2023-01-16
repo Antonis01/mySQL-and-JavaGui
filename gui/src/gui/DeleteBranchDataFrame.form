@@ -70,7 +70,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Laksaman" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Dlete Data for Branch"/>
+        <Property name="text" type="java.lang.String" value="Delete Data for Branch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
