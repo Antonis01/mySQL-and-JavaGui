@@ -94,12 +94,15 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu10 = new javax.swing.JMenu();
         UpdateBranchButton = new javax.swing.JMenuItem();
+        jSeparator33 = new javax.swing.JPopupMenu.Separator();
         jMenu11 = new javax.swing.JMenu();
         UpdateAdminButton = new javax.swing.JMenuItem();
         jSeparator31 = new javax.swing.JPopupMenu.Separator();
         UpdateGuideButton = new javax.swing.JMenuItem();
         jSeparator32 = new javax.swing.JPopupMenu.Separator();
         UpdateDriverButton = new javax.swing.JMenuItem();
+        jSeparator34 = new javax.swing.JPopupMenu.Separator();
+        UpdateTripButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         BranchDeleteButton = new javax.swing.JMenuItem();
@@ -332,6 +335,7 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu10.add(UpdateBranchButton);
+        jMenu10.add(jSeparator33);
 
         jMenu11.setText("Workers");
 
@@ -344,7 +348,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu11.add(UpdateAdminButton);
         jMenu11.add(jSeparator31);
 
-        UpdateGuideButton.setText("Guide");
+        UpdateGuideButton.setText("Guides");
         UpdateGuideButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateGuideButtonActionPerformed(evt);
@@ -353,7 +357,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu11.add(UpdateGuideButton);
         jMenu11.add(jSeparator32);
 
-        UpdateDriverButton.setText("Driver");
+        UpdateDriverButton.setText("Drivers");
         UpdateDriverButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateDriverButtonActionPerformed(evt);
@@ -362,6 +366,15 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu11.add(UpdateDriverButton);
 
         jMenu10.add(jMenu11);
+        jMenu10.add(jSeparator34);
+
+        UpdateTripButton.setText("Trip");
+        UpdateTripButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateTripButtonActionPerformed(evt);
+            }
+        });
+        jMenu10.add(UpdateTripButton);
 
         jMenu1.add(jMenu10);
         jMenu1.add(jSeparator2);
@@ -831,6 +844,12 @@ public class ActionFrame extends javax.swing.JFrame {
         ud.setVisible(true);
     }//GEN-LAST:event_UpdateDriverButtonActionPerformed
 
+    private void UpdateTripButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTripButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateTripDataFrame ut = new UpdateTripDataFrame();
+        ut.setVisible(true);
+    }//GEN-LAST:event_UpdateTripButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -898,6 +917,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem UpdateBranchButton;
     private javax.swing.JMenuItem UpdateDriverButton;
     private javax.swing.JMenuItem UpdateGuideButton;
+    private javax.swing.JMenuItem UpdateTripButton;
     private javax.swing.JMenuItem ViewChangesButton;
     private javax.swing.JMenuItem WorkerInfoButton;
     private java.awt.Button button1;
@@ -959,6 +979,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator31;
     private javax.swing.JPopupMenu.Separator jSeparator32;
+    private javax.swing.JPopupMenu.Separator jSeparator33;
+    private javax.swing.JPopupMenu.Separator jSeparator34;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;

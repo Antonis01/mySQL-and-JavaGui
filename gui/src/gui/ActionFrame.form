@@ -324,6 +324,8 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateBranchButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator33">
+                </MenuItem>
                 <Menu class="javax.swing.JMenu" name="jMenu11">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Workers"/>
@@ -341,7 +343,7 @@
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="UpdateGuideButton">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Guide"/>
+                        <Property name="text" type="java.lang.String" value="Guides"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateGuideButtonActionPerformed"/>
@@ -351,7 +353,7 @@
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="UpdateDriverButton">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Driver"/>
+                        <Property name="text" type="java.lang.String" value="Drivers"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateDriverButtonActionPerformed"/>
@@ -359,6 +361,16 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator34">
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="UpdateTripButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Trip"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateTripButtonActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
