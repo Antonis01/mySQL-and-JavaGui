@@ -131,8 +131,8 @@ public class InsertTravelToDataFrame extends javax.swing.JFrame {
 
             pstmt = con.getConnection().prepareStatement(insert_travel_to);
 
-            pstmt.setString(1, IDTextField.getText());
-            pstmt.setString(2, DestinationIDTextField.getText());
+            pstmt.setInt(1, Integer.parseInt(IDTextField.getText()));
+            pstmt.setInt(2, Integer.parseInt(DestinationIDTextField.getText()));
             pstmt.setString(3, ArrivalTextField.getText());
             pstmt.setString(4, DepartureTextField.getText());
 

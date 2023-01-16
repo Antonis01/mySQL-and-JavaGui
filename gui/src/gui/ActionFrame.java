@@ -89,6 +89,8 @@ public class ActionFrame extends javax.swing.JFrame {
         BranchDeleteButton = new javax.swing.JMenuItem();
         jSeparator21 = new javax.swing.JPopupMenu.Separator();
         PhonesDeleteButton = new javax.swing.JMenuItem();
+        jSeparator22 = new javax.swing.JPopupMenu.Separator();
+        TripDeleteButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -289,6 +291,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(PhonesDeleteButton);
+        jMenu5.add(jSeparator22);
+
+        TripDeleteButton.setText("Trip");
+        TripDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TripDeleteButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(TripDeleteButton);
 
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
@@ -585,6 +596,12 @@ public class ActionFrame extends javax.swing.JFrame {
         dp.setVisible(true);
     }//GEN-LAST:event_PhonesDeleteButtonActionPerformed
 
+    private void TripDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteTripDataFrame dt = new DeleteTripDataFrame ();
+        dt.setVisible(true);
+    }//GEN-LAST:event_TripDeleteButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -637,6 +654,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem PhonesDeleteButton;
     private javax.swing.JMenuItem ReservationInsertButton;
     private javax.swing.JMenuItem TravelToInstertButton;
+    private javax.swing.JMenuItem TripDeleteButton;
     private javax.swing.JMenuItem TripInfoButton;
     private javax.swing.JMenuItem TripInsertButton;
     private javax.swing.JMenuItem ViewChangesButton;
@@ -680,6 +698,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JPopupMenu.Separator jSeparator21;
+    private javax.swing.JPopupMenu.Separator jSeparator22;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;

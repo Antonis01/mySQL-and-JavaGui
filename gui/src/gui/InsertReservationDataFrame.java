@@ -162,7 +162,7 @@ public class InsertReservationDataFrame extends javax.swing.JFrame {
 
             pst = con.getConnection().prepareStatement(insert_reservation);
 
-            pst.setString(1,IDTextField.getText());
+            pst.setInt(1, Integer.parseInt(IDTextField.getText()));
             pst.setString(2,SeatNumberTextField.getText());
             pst.setString(3, NameTextField.getText());
             pst.setString(4,LastNameTextField.getText());
