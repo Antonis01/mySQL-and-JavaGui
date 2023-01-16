@@ -24,4 +24,5 @@ public class ConnectToMySQL {
             return (Connection) ex;
         }
     }
+
 }

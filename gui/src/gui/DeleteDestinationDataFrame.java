@@ -36,10 +36,10 @@ public class DeleteDestinationDataFrame extends javax.swing.JFrame {
         IDTextField = new javax.swing.JTextField();
         DeleteButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Delete Data for Destination");
+        jLabel1.setText("Delete Data from Destination");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Destination ID:");
@@ -81,7 +81,8 @@ public class DeleteDestinationDataFrame extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(398, 203));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed

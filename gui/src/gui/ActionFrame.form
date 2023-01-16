@@ -136,6 +136,34 @@
         <Property name="text" type="java.lang.String" value="jMenuItem5"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem6"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JMenuBar" name="jMenuBar2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="File"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edit"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem7"/>
+      </Properties>
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="MenuBarFrame">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -296,6 +324,16 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator22">
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="DeleteWorkerButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Worker"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteWorkerButtonActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator28">
+                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="TripDeleteButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Trip"/>
@@ -304,7 +342,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TripDeleteButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator23">
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator29">
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="EventDeleteButton">
                   <Properties>
@@ -314,7 +352,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EventDeleteButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator24">
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator27">
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="TravelToDeleteButton">
                   <Properties>
@@ -340,6 +378,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Destination"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DestinationDeleteButtonActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

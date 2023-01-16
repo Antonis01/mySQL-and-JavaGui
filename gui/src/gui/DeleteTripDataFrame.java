@@ -39,7 +39,7 @@ public class DeleteTripDataFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Delete Data for Trip");
+        jLabel1.setText("Delete Data from Trip");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Trip ID:");

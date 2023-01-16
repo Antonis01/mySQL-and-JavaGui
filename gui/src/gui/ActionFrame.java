@@ -56,6 +56,11 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
@@ -90,10 +95,12 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator21 = new javax.swing.JPopupMenu.Separator();
         PhonesDeleteButton = new javax.swing.JMenuItem();
         jSeparator22 = new javax.swing.JPopupMenu.Separator();
+        DeleteWorkerButton = new javax.swing.JMenuItem();
+        jSeparator28 = new javax.swing.JPopupMenu.Separator();
         TripDeleteButton = new javax.swing.JMenuItem();
-        jSeparator23 = new javax.swing.JPopupMenu.Separator();
+        jSeparator29 = new javax.swing.JPopupMenu.Separator();
         EventDeleteButton = new javax.swing.JMenuItem();
-        jSeparator24 = new javax.swing.JPopupMenu.Separator();
+        jSeparator27 = new javax.swing.JPopupMenu.Separator();
         TravelToDeleteButton = new javax.swing.JMenuItem();
         jSeparator25 = new javax.swing.JPopupMenu.Separator();
         ReservationDeleteButton = new javax.swing.JMenuItem();
@@ -157,6 +164,16 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu7);
 
         jMenuItem5.setText("jMenuItem5");
+
+        jMenuItem6.setText("jMenuItem6");
+
+        jMenu8.setText("File");
+        jMenuBar2.add(jMenu8);
+
+        jMenu9.setText("Edit");
+        jMenuBar2.add(jMenu9);
+
+        jMenuItem7.setText("jMenuItem7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -301,6 +318,15 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu5.add(PhonesDeleteButton);
         jMenu5.add(jSeparator22);
 
+        DeleteWorkerButton.setText("Worker");
+        DeleteWorkerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteWorkerButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(DeleteWorkerButton);
+        jMenu5.add(jSeparator28);
+
         TripDeleteButton.setText("Trip");
         TripDeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +334,7 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(TripDeleteButton);
-        jMenu5.add(jSeparator23);
+        jMenu5.add(jSeparator29);
 
         EventDeleteButton.setText("Event");
         EventDeleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -317,7 +343,7 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(EventDeleteButton);
-        jMenu5.add(jSeparator24);
+        jMenu5.add(jSeparator27);
 
         TravelToDeleteButton.setText("Travel To");
         TravelToDeleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -338,6 +364,11 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu5.add(jSeparator26);
 
         DestinationDeleteButton.setText("Destination");
+        DestinationDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DestinationDeleteButtonActionPerformed(evt);
+            }
+        });
         jMenu5.add(DestinationDeleteButton);
 
         jMenu1.add(jMenu5);
@@ -617,23 +648,11 @@ public class ActionFrame extends javax.swing.JFrame {
         it.setVisible(true);
     }//GEN-LAST:event_TravelToInstertButtonActionPerformed
 
-    private void BranchDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchDeleteButtonActionPerformed
-        // TODO add your handling code here:
-        DeleteBranchDataFrame db= new DeleteBranchDataFrame();
-        db.setVisible(true);
-    }//GEN-LAST:event_BranchDeleteButtonActionPerformed
-
     private void ReservationInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationInsertButtonActionPerformed
         // TODO add your handling code here:
         InsertReservationDataFrame ir = new InsertReservationDataFrame ();
         ir.setVisible(true);
     }//GEN-LAST:event_ReservationInsertButtonActionPerformed
-
-    private void PhonesDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhonesDeleteButtonActionPerformed
-        // TODO add your handling code here:
-        DeletePhonesDataFrame dp = new DeletePhonesDataFrame();
-        dp.setVisible(true);
-    }//GEN-LAST:event_PhonesDeleteButtonActionPerformed
 
     private void TripDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripDeleteButtonActionPerformed
         // TODO add your handling code here:
@@ -641,11 +660,17 @@ public class ActionFrame extends javax.swing.JFrame {
         dt.setVisible(true);
     }//GEN-LAST:event_TripDeleteButtonActionPerformed
 
-    private void EventDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventDeleteButtonActionPerformed
+    private void DestinationDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinationDeleteButtonActionPerformed
         // TODO add your handling code here:
-        DeleteEventDataFrame de = new DeleteEventDataFrame ();
-        de.setVisible(true);
-    }//GEN-LAST:event_EventDeleteButtonActionPerformed
+        DeleteDestinationDataFrame dd = new DeleteDestinationDataFrame();
+        dd.setVisible(true);
+    }//GEN-LAST:event_DestinationDeleteButtonActionPerformed
+
+    private void ReservationDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteReservationDataFrame dr = new DeleteReservationDataFrame ();
+        dr.setVisible(true);
+    }//GEN-LAST:event_ReservationDeleteButtonActionPerformed
 
     private void TravelToDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TravelToDeleteButtonActionPerformed
         // TODO add your handling code here:
@@ -653,11 +678,29 @@ public class ActionFrame extends javax.swing.JFrame {
         dt.setVisible(true);
     }//GEN-LAST:event_TravelToDeleteButtonActionPerformed
 
-    private void ReservationDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationDeleteButtonActionPerformed
+    private void EventDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventDeleteButtonActionPerformed
         // TODO add your handling code here:
-        DeleteReservationDataFrame dr = new DeleteReservationDataFrame ();
-        dr.setVisible(true);
-    }//GEN-LAST:event_ReservationDeleteButtonActionPerformed
+        DeleteEventDataFrame de = new DeleteEventDataFrame ();
+        de.setVisible(true);
+    }//GEN-LAST:event_EventDeleteButtonActionPerformed
+
+    private void PhonesDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhonesDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeletePhonesDataFrame dp = new DeletePhonesDataFrame();
+        dp.setVisible(true);
+    }//GEN-LAST:event_PhonesDeleteButtonActionPerformed
+
+    private void BranchDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteBranchDataFrame db= new DeleteBranchDataFrame();
+        db.setVisible(true);
+    }//GEN-LAST:event_BranchDeleteButtonActionPerformed
+
+    private void DeleteWorkerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteWorkerButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteWorkerDataFrame dw = new DeleteWorkerDataFrame();
+        dw.setVisible(true);
+    }//GEN-LAST:event_DeleteWorkerButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -699,6 +742,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem BranchDeleteButton;
     private javax.swing.JMenuItem BranchInfoButton;
     private javax.swing.JMenuItem CustomerInfoButton;
+    private javax.swing.JMenuItem DeleteWorkerButton;
     private javax.swing.JMenuItem DestinationDeleteButton;
     private javax.swing.JMenuItem DestinationInsertButton;
     private javax.swing.JMenuItem DriverInsertButton;
@@ -733,7 +777,10 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -741,6 +788,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
@@ -760,10 +809,11 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JPopupMenu.Separator jSeparator21;
     private javax.swing.JPopupMenu.Separator jSeparator22;
-    private javax.swing.JPopupMenu.Separator jSeparator23;
-    private javax.swing.JPopupMenu.Separator jSeparator24;
     private javax.swing.JPopupMenu.Separator jSeparator25;
     private javax.swing.JPopupMenu.Separator jSeparator26;
+    private javax.swing.JPopupMenu.Separator jSeparator27;
+    private javax.swing.JPopupMenu.Separator jSeparator28;
+    private javax.swing.JPopupMenu.Separator jSeparator29;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
