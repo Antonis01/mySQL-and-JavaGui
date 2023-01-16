@@ -97,6 +97,8 @@ public class ActionFrame extends javax.swing.JFrame {
         TravelToDeleteButton = new javax.swing.JMenuItem();
         jSeparator25 = new javax.swing.JPopupMenu.Separator();
         ReservationDeleteButton = new javax.swing.JMenuItem();
+        jSeparator26 = new javax.swing.JPopupMenu.Separator();
+        DestinationDeleteButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -333,6 +335,10 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(ReservationDeleteButton);
+        jMenu5.add(jSeparator26);
+
+        DestinationDeleteButton.setText("Destination");
+        jMenu5.add(DestinationDeleteButton);
 
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
@@ -693,6 +699,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem BranchDeleteButton;
     private javax.swing.JMenuItem BranchInfoButton;
     private javax.swing.JMenuItem CustomerInfoButton;
+    private javax.swing.JMenuItem DestinationDeleteButton;
     private javax.swing.JMenuItem DestinationInsertButton;
     private javax.swing.JMenuItem DriverInsertButton;
     private javax.swing.JMenuItem EditDataButton;
@@ -756,6 +763,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator23;
     private javax.swing.JPopupMenu.Separator jSeparator24;
     private javax.swing.JPopupMenu.Separator jSeparator25;
+    private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
