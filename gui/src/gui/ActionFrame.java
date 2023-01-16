@@ -75,7 +75,8 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        DeleteDataButton = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        BranchDeleteButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -236,8 +237,17 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu1.add(EditDataButton);
         jMenu1.add(jSeparator2);
 
-        DeleteDataButton.setText("Delete Data");
-        jMenu1.add(DeleteDataButton);
+        jMenu5.setText("Delete Data");
+
+        BranchDeleteButton.setText("Branch");
+        BranchDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BranchDeleteButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(BranchDeleteButton);
+
+        jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
 
         AddNewITButton.setText("Add New IT");
@@ -514,6 +524,12 @@ public class ActionFrame extends javax.swing.JFrame {
         it.setVisible(true);
     }//GEN-LAST:event_TravelToInstertButtonActionPerformed
 
+    private void BranchDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BranchDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteBranchDataFrame db= new DeleteBranchDataFrame();
+        db.setVisible(true);
+    }//GEN-LAST:event_BranchDeleteButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -551,9 +567,9 @@ public class ActionFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AddNewITButton;
+    private javax.swing.JMenuItem BranchDeleteButton;
     private javax.swing.JMenuItem BranchInfoButton;
     private javax.swing.JMenuItem CustomerInfoButton;
-    private javax.swing.JMenuItem DeleteDataButton;
     private javax.swing.JMenuItem DestinationInsertButton;
     private javax.swing.JMenuItem DriverInsertButton;
     private javax.swing.JMenuItem EditDataButton;
@@ -578,6 +594,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
