@@ -91,7 +91,8 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator24 = new javax.swing.JPopupMenu.Separator();
         ReservationOffersInsertButton = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        EditDataButton = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        UpdateBranchButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         BranchDeleteButton = new javax.swing.JMenuItem();
@@ -313,14 +314,17 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu1.add(jMenu4);
         jMenu1.add(jSeparator1);
 
-        EditDataButton.setText("Edit Data");
-        EditDataButton.setActionCommand("EditDataButton");
-        EditDataButton.addActionListener(new java.awt.event.ActionListener() {
+        jMenu10.setText("Update Data");
+
+        UpdateBranchButton.setText("Branch");
+        UpdateBranchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditDataButtonActionPerformed(evt);
+                UpdateBranchButtonActionPerformed(evt);
             }
         });
-        jMenu1.add(EditDataButton);
+        jMenu10.add(UpdateBranchButton);
+
+        jMenu1.add(jMenu10);
         jMenu1.add(jSeparator2);
 
         jMenu5.setText("Delete Data");
@@ -496,11 +500,6 @@ public class ActionFrame extends javax.swing.JFrame {
         InsertBranchDataFrame ib = new InsertBranchDataFrame();
         ib.setVisible(true);
     }//GEN-LAST:event_InserDataButtonActionPerformed
-
-    private void EditDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditDataButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_EditDataButtonActionPerformed
 
     private void TripInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripInfoButtonActionPerformed
         // TODO add your handling code here:
@@ -769,6 +768,12 @@ public class ActionFrame extends javax.swing.JFrame {
         dro.setVisible(true);
     }//GEN-LAST:event_DeleteResOffersButtonActionPerformed
 
+    private void UpdateBranchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBranchButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateBranchDataFrame ub = new UpdateBranchDataFrame();
+        ub.setVisible(true);
+    }//GEN-LAST:event_UpdateBranchButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -815,7 +820,6 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem DestinationDeleteButton;
     private javax.swing.JMenuItem DestinationInsertButton;
     private javax.swing.JMenuItem DriverInsertButton;
-    private javax.swing.JMenuItem EditDataButton;
     private javax.swing.JMenuItem EventDeleteButton;
     private javax.swing.JMenuItem EventInsertButton;
     private javax.swing.JMenuItem GuideInsertButton;
@@ -833,6 +837,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem TripDeleteButton;
     private javax.swing.JMenuItem TripInfoButton;
     private javax.swing.JMenuItem TripInsertButton;
+    private javax.swing.JMenuItem UpdateBranchButton;
     private javax.swing.JMenuItem ViewChangesButton;
     private javax.swing.JMenuItem WorkerInfoButton;
     private java.awt.Button button1;
@@ -842,6 +847,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;

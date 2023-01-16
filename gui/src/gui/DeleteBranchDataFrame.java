@@ -90,7 +90,7 @@ public class DeleteBranchDataFrame extends javax.swing.JFrame {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
-         ConnectToMySQL con = new ConnectToMySQL();
+        ConnectToMySQL con = new ConnectToMySQL();
 
         String delete_branch = "DELETE FROM branch WHERE br_code= ?";
         
