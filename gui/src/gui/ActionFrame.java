@@ -58,6 +58,8 @@ public class ActionFrame extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JPopupMenu.Separator();
         jMenu3 = new javax.swing.JMenu();
         InsertAdminsButton = new javax.swing.JMenuItem();
+        jSeparator10 = new javax.swing.JPopupMenu.Separator();
+        GuideButton = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -152,6 +154,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu3.add(InsertAdminsButton);
+        jMenu3.add(jSeparator10);
+
+        GuideButton.setText("Guide");
+        GuideButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuideButtonActionPerformed(evt);
+            }
+        });
+        jMenu3.add(GuideButton);
 
         jMenu4.add(jMenu3);
 
@@ -410,6 +421,12 @@ public class ActionFrame extends javax.swing.JFrame {
         ia.setVisible(true);
     }//GEN-LAST:event_InsertAdminsButtonActionPerformed
 
+    private void GuideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuideButtonActionPerformed
+        // TODO add your handling code here:
+        InsertGuideDataFrame ig = new InsertGuideDataFrame();
+        ig.setVisible(true);
+    }//GEN-LAST:event_GuideButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -451,6 +468,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem CustomerInfoButton;
     private javax.swing.JMenuItem DeleteDataButton;
     private javax.swing.JMenuItem EditDataButton;
+    private javax.swing.JMenuItem GuideButton;
     private javax.swing.JMenuItem InserDataButton;
     private javax.swing.JMenuItem InsertAdminsButton;
     private javax.swing.JMenuItem InsertPhonesButton;
@@ -477,6 +495,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
