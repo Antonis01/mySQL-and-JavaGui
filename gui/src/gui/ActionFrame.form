@@ -282,7 +282,15 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReservationInsertButtonActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator18">
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator23">
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="OffersInsertButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Offers"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OffersInsertButtonActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

@@ -86,7 +86,8 @@ public class ActionFrame extends javax.swing.JFrame {
         TravelToInstertButton = new javax.swing.JMenuItem();
         jSeparator19 = new javax.swing.JPopupMenu.Separator();
         ReservationInsertButton = new javax.swing.JMenuItem();
-        jSeparator18 = new javax.swing.JPopupMenu.Separator();
+        jSeparator23 = new javax.swing.JPopupMenu.Separator();
+        OffersInsertButton = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -283,7 +284,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu4.add(ReservationInsertButton);
-        jMenu4.add(jSeparator18);
+        jMenu4.add(jSeparator23);
+
+        OffersInsertButton.setText("Offers");
+        OffersInsertButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OffersInsertButtonActionPerformed(evt);
+            }
+        });
+        jMenu4.add(OffersInsertButton);
 
         jMenu1.add(jMenu4);
         jMenu1.add(jSeparator1);
@@ -702,6 +711,12 @@ public class ActionFrame extends javax.swing.JFrame {
         dw.setVisible(true);
     }//GEN-LAST:event_DeleteWorkerButtonActionPerformed
 
+    private void OffersInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OffersInsertButtonActionPerformed
+        // TODO add your handling code here:
+        InsertOffersDataFrame io = new InsertOffersDataFrame();
+        io.setVisible(true);
+    }//GEN-LAST:event_OffersInsertButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -754,6 +769,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem InsertAdminsButton;
     private javax.swing.JMenuItem InsertPhonesButton;
     private javax.swing.JMenuBar MenuBarFrame;
+    private javax.swing.JMenuItem OffersInsertButton;
     private javax.swing.JMenuItem PhonesDeleteButton;
     private javax.swing.JMenuItem ReservationDeleteButton;
     private javax.swing.JMenuItem ReservationInsertButton;
@@ -803,12 +819,12 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator15;
     private javax.swing.JPopupMenu.Separator jSeparator16;
     private javax.swing.JPopupMenu.Separator jSeparator17;
-    private javax.swing.JPopupMenu.Separator jSeparator18;
     private javax.swing.JPopupMenu.Separator jSeparator19;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JPopupMenu.Separator jSeparator21;
     private javax.swing.JPopupMenu.Separator jSeparator22;
+    private javax.swing.JPopupMenu.Separator jSeparator23;
     private javax.swing.JPopupMenu.Separator jSeparator25;
     private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator27;
