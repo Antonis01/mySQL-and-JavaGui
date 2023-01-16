@@ -91,6 +91,8 @@ public class ActionFrame extends javax.swing.JFrame {
         PhonesDeleteButton = new javax.swing.JMenuItem();
         jSeparator22 = new javax.swing.JPopupMenu.Separator();
         TripDeleteButton = new javax.swing.JMenuItem();
+        jSeparator23 = new javax.swing.JPopupMenu.Separator();
+        EventDeleteButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -300,6 +302,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(TripDeleteButton);
+        jMenu5.add(jSeparator23);
+
+        EventDeleteButton.setText("Event");
+        EventDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EventDeleteButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(EventDeleteButton);
 
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
@@ -602,6 +613,12 @@ public class ActionFrame extends javax.swing.JFrame {
         dt.setVisible(true);
     }//GEN-LAST:event_TripDeleteButtonActionPerformed
 
+    private void EventDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteEventDataFrame de = new DeleteEventDataFrame ();
+        de.setVisible(true);
+    }//GEN-LAST:event_EventDeleteButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -645,6 +662,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem DestinationInsertButton;
     private javax.swing.JMenuItem DriverInsertButton;
     private javax.swing.JMenuItem EditDataButton;
+    private javax.swing.JMenuItem EventDeleteButton;
     private javax.swing.JMenuItem EventInsertButton;
     private javax.swing.JMenuItem GuideInsertButton;
     private javax.swing.JMenuItem InserDataButton;
@@ -699,6 +717,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JPopupMenu.Separator jSeparator21;
     private javax.swing.JPopupMenu.Separator jSeparator22;
+    private javax.swing.JPopupMenu.Separator jSeparator23;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
