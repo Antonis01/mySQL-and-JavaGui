@@ -49,6 +49,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
+        jMenuItem3 = new javax.swing.JMenuItem();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
@@ -72,6 +73,9 @@ public class ActionFrame extends javax.swing.JFrame {
         DestinationInsertButton = new javax.swing.JMenuItem();
         jSeparator17 = new javax.swing.JPopupMenu.Separator();
         TravelToInstertButton = new javax.swing.JMenuItem();
+        jSeparator19 = new javax.swing.JPopupMenu.Separator();
+        ReservationInsertButton = new javax.swing.JMenuItem();
+        jSeparator18 = new javax.swing.JPopupMenu.Separator();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -123,6 +127,8 @@ public class ActionFrame extends javax.swing.JFrame {
 
         jCheckBoxMenuItem3.setSelected(true);
         jCheckBoxMenuItem3.setText("jCheckBoxMenuItem3");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -223,6 +229,16 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu4.add(TravelToInstertButton);
+        jMenu4.add(jSeparator19);
+
+        ReservationInsertButton.setText("Reservation");
+        ReservationInsertButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReservationInsertButtonActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ReservationInsertButton);
+        jMenu4.add(jSeparator18);
 
         jMenu1.add(jMenu4);
         jMenu1.add(jSeparator1);
@@ -530,6 +546,12 @@ public class ActionFrame extends javax.swing.JFrame {
         db.setVisible(true);
     }//GEN-LAST:event_BranchDeleteButtonActionPerformed
 
+    private void ReservationInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservationInsertButtonActionPerformed
+        // TODO add your handling code here:
+        InsertReservationDataFrame ir = new InsertReservationDataFrame ();
+        ir.setVisible(true);
+    }//GEN-LAST:event_ReservationInsertButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -579,6 +601,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem InsertAdminsButton;
     private javax.swing.JMenuItem InsertPhonesButton;
     private javax.swing.JMenuBar MenuBarFrame;
+    private javax.swing.JMenuItem ReservationInsertButton;
     private javax.swing.JMenuItem TravelToInstertButton;
     private javax.swing.JMenuItem TripInfoButton;
     private javax.swing.JMenuItem TripInsertButton;
@@ -599,6 +622,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
@@ -612,6 +636,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator15;
     private javax.swing.JPopupMenu.Separator jSeparator16;
     private javax.swing.JPopupMenu.Separator jSeparator17;
+    private javax.swing.JPopupMenu.Separator jSeparator18;
+    private javax.swing.JPopupMenu.Separator jSeparator19;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
