@@ -97,6 +97,8 @@
         <Property name="text" type="java.lang.String" value="jCheckBoxMenuItem3"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator12">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="MenuBarFrame">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -165,6 +167,16 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator13">
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Trip"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
