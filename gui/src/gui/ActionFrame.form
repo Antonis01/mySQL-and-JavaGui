@@ -337,6 +337,16 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateAdminButtonActionPerformed"/>
                       </Events>
                     </MenuItem>
+                    <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator31">
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="UpdateGuideButton">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Guide"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateGuideButtonActionPerformed"/>
+                      </Events>
+                    </MenuItem>
                   </SubComponents>
                 </Menu>
               </SubComponents>

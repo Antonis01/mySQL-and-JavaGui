@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author antonis
  */
-public class UpdateAdminDataFrame extends javax.swing.JFrame {
+public class UpdateGuideDataFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateAdminDataFrame
+     * Creates new form UpdateGuideDataFrame
      */
-    public UpdateAdminDataFrame() {
+    public UpdateGuideDataFrame() {
         initComponents();
     }
 
@@ -30,17 +30,14 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        StreetTextField2 = new javax.swing.JTextField();
-        UpdateStreetButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        GuideIDTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        AdminIDTextField = new javax.swing.JTextField();
         NameTextField = new javax.swing.JTextField();
-        UpdateNameButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         LnameTextField = new javax.swing.JTextField();
+        UpdateNameButton = new javax.swing.JButton();
         UpdateLnameButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         SalaryTextField = new javax.swing.JTextField();
@@ -49,21 +46,11 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
         BrCodeTextField = new javax.swing.JTextField();
         UpdateBrCodeButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        UpdateTypeButton = new javax.swing.JButton();
+        CVTextField = new javax.swing.JTextField();
+        UpdateCVButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        DiplomaTextField = new javax.swing.JTextField();
-        UpdateDiplomaButton = new javax.swing.JButton();
-        ChooseTypeAdmin = new javax.swing.JComboBox<>();
-
-        jLabel4.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel4.setText("Street:");
-
-        UpdateStreetButton2.setText("UPDATE");
-        UpdateStreetButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateStreetButton2ActionPerformed(evt);
-            }
-        });
+        LanguagesTextField = new javax.swing.JTextField();
+        UpdateLanguagesButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -71,10 +58,13 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
         jLabel1.setText("Update Data for Admin");
 
         jLabel5.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel5.setText("Admin ID:");
+        jLabel5.setText("Guide ID:");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Name:");
+
+        jLabel3.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
+        jLabel3.setText("Lastname:");
 
         UpdateNameButton.setText("UPDATE");
         UpdateNameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,9 +72,6 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
                 UpdateNameButtonActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel3.setText("Lastname:");
 
         UpdateLnameButton.setText("UPDATE");
         UpdateLnameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,29 +101,22 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel8.setText("Type:");
+        jLabel8.setText("CV:");
 
-        UpdateTypeButton.setText("UPDATE");
-        UpdateTypeButton.addActionListener(new java.awt.event.ActionListener() {
+        UpdateCVButton.setText("UPDATE");
+        UpdateCVButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateTypeButtonActionPerformed(evt);
+                UpdateCVButtonActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel9.setText("Diploma:");
+        jLabel9.setText("Languages:");
 
-        UpdateDiplomaButton.setText("UPDATE");
-        UpdateDiplomaButton.addActionListener(new java.awt.event.ActionListener() {
+        UpdateLanguagesButton.setText("UPDATE");
+        UpdateLanguagesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateDiplomaButtonActionPerformed(evt);
-            }
-        });
-
-        ChooseTypeAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOGISTICS", "ADMINISTRATIVE", "ACCOUNTING" }));
-        ChooseTypeAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChooseTypeAdminActionPerformed(evt);
+                UpdateLanguagesButtonActionPerformed(evt);
             }
         });
 
@@ -146,54 +126,46 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ChooseTypeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LanguagesTextField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CVTextField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BrCodeTextField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SalaryTextField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LnameTextField))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(BrCodeTextField))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(SalaryTextField))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(LnameTextField))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(NameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(AdminIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(UpdateNameButton)
-                                .addGap(32, 32, 32))
-                            .addComponent(UpdateLnameButton)
-                            .addComponent(UpdateSalaryButton)
-                            .addComponent(UpdateBrCodeButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(DiplomaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(UpdateDiplomaButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(UpdateTypeButton)))
-                        .addGap(32, 32, 32))))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(NameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(GuideIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UpdateLnameButton)
+                    .addComponent(UpdateNameButton)
+                    .addComponent(UpdateSalaryButton)
+                    .addComponent(UpdateBrCodeButton)
+                    .addComponent(UpdateCVButton)
+                    .addComponent(UpdateLanguagesButton))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +175,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AdminIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GuideIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,17 +199,17 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateTypeButton)
-                    .addComponent(ChooseTypeAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CVTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateCVButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DiplomaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateDiplomaButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LanguagesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UpdateLanguagesButton))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(470, 432));
+        setSize(new java.awt.Dimension(451, 440));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -254,7 +226,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setString(1, NameTextField.getText());
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -285,7 +257,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setString(1, LnameTextField.getText());
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -303,11 +275,6 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_UpdateLnameButtonActionPerformed
 
-    private void UpdateStreetButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStreetButton2ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_UpdateStreetButton2ActionPerformed
-
     private void UpdateSalaryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateSalaryButtonActionPerformed
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
@@ -321,7 +288,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setFloat(1, Float.parseFloat(SalaryTextField.getText()));
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -352,7 +319,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setInt(1, Integer.parseInt(BrCodeTextField.getText()));
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -370,11 +337,11 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_UpdateBrCodeButtonActionPerformed
 
-    private void UpdateTypeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTypeButtonActionPerformed
+    private void UpdateCVButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateCVButtonActionPerformed
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String update = "UPDATE _admin SET adm_type = ? WHERE adm_AT = ?";
+        String update = "UPDATE guide SET gui_cv = ? WHERE gui_AT = ?";
 
         PreparedStatement pst;
 
@@ -382,8 +349,8 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
 
             pst = con.getConnection().prepareStatement(update);
 
-            pst.setString(1, ChooseTypeAdmin.getSelectedItem().toString());
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(1, CVTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -399,13 +366,13 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         }
-    }//GEN-LAST:event_UpdateTypeButtonActionPerformed
+    }//GEN-LAST:event_UpdateCVButtonActionPerformed
 
-    private void UpdateDiplomaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateDiplomaButtonActionPerformed
+    private void UpdateLanguagesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateLanguagesButtonActionPerformed
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String update = "UPDATE _admin SET adm_diploma = ? WHERE adm_AT = ?";
+        String update = "UPDATE languages SET lng_language = ? WHERE lng_gui_AT = ?";
 
         PreparedStatement pst;
 
@@ -413,8 +380,8 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
 
             pst = con.getConnection().prepareStatement(update);
 
-            pst.setString(1, DiplomaTextField.getText());
-            pst.setString(2, AdminIDTextField.getText());
+            pst.setString(1, LanguagesTextField.getText());
+            pst.setString(2, GuideIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -430,11 +397,7 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         }
-    }//GEN-LAST:event_UpdateDiplomaButtonActionPerformed
-
-    private void ChooseTypeAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChooseTypeAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChooseTypeAdminActionPerformed
+    }//GEN-LAST:event_UpdateLanguagesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -453,44 +416,41 @@ public class UpdateAdminDataFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateAdminDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateAdminDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateAdminDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateAdminDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateAdminDataFrame().setVisible(true);
+                new UpdateGuideDataFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AdminIDTextField;
     private javax.swing.JTextField BrCodeTextField;
-    private javax.swing.JComboBox<String> ChooseTypeAdmin;
-    private javax.swing.JTextField DiplomaTextField;
+    private javax.swing.JTextField CVTextField;
+    private javax.swing.JTextField GuideIDTextField;
+    private javax.swing.JTextField LanguagesTextField;
     private javax.swing.JTextField LnameTextField;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JTextField SalaryTextField;
-    private javax.swing.JTextField StreetTextField2;
     private javax.swing.JButton UpdateBrCodeButton;
-    private javax.swing.JButton UpdateDiplomaButton;
+    private javax.swing.JButton UpdateCVButton;
+    private javax.swing.JButton UpdateLanguagesButton;
     private javax.swing.JButton UpdateLnameButton;
     private javax.swing.JButton UpdateNameButton;
     private javax.swing.JButton UpdateSalaryButton;
-    private javax.swing.JButton UpdateStreetButton2;
-    private javax.swing.JButton UpdateTypeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
