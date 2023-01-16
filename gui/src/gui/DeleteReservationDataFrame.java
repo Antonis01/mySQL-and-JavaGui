@@ -101,13 +101,10 @@ public class DeleteReservationDataFrame extends javax.swing.JFrame {
 
             pstmt.setInt(1, Integer.parseInt(IDTextField.getText()));
             
-
             pstmt.executeUpdate();
             
-
             JOptionPane.showMessageDialog(rootPane,"Delete Successful");
             pstmt.close();
-            
 
             con.getConnection().close();
 

@@ -5,13 +5,13 @@ CREATE TRIGGER insert_trip_log BEFORE INSERT  ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', "TRIP", session_user());
+  VALUES ('INSERT', "TRIP", session_use());
 END$
 DELIMITER ;
 
 DROP TRIGGER IF EXISTS update_trip_log;
 DELIMITER $
-CREATE TRIGGER update_trip_log AFTER UPDATE ON trip
+CREATE TRIGGER update_trip_log BEFORE UPDATE ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -21,7 +21,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS delete_trip_log;
 DELIMITER $
-CREATE TRIGGER delete_trip_log AFTER DELETE ON trip
+CREATE TRIGGER delete_trip_log BEFORE DELETE ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -31,7 +31,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS insert_reservation_log;
 DELIMITER $
-CREATE TRIGGER insert_reservation_log AFTER INSERT  ON reservation
+CREATE TRIGGER insert_reservation_log BEFORE INSERT  ON reservation
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -41,7 +41,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS update_reservation_log;
 DELIMITER $
-CREATE TRIGGER update_reservation_log AFTER UPDATE  ON reservation
+CREATE TRIGGER update_reservation_log BEFORE UPDATE  ON reservation
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -51,7 +51,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS delete_reservation_log;
 DELIMITER $
-CREATE TRIGGER delete_reservation_log AFTER DELETE ON reservation
+CREATE TRIGGER delete_reservation_log BEFORE DELETE ON reservation
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -61,7 +61,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS insert_event_log;
 DELIMITER $
-CREATE TRIGGER insert_event_log AFTER INSERT  ON event
+CREATE TRIGGER insert_event_log BEFORE INSERT  ON event
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -71,7 +71,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS update_event_log;
 DELIMITER $
-CREATE TRIGGER update_event_log AFTER UPDATE  ON event
+CREATE TRIGGER update_event_log BEFORE UPDATE  ON event
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -81,7 +81,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS delete_event_log;
 DELIMITER $
-CREATE TRIGGER delete_event_log AFTER DELETE ON event
+CREATE TRIGGER delete_event_log BEFORE DELETE ON event
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -91,7 +91,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS insert_travel_to_log;
 DELIMITER $
-CREATE TRIGGER insert_travel_to_log AFTER INSERT  ON travel_to
+CREATE TRIGGER insert_travel_to_log BEFORE INSERT  ON travel_to
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -101,7 +101,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS update_travel_to_log;
 DELIMITER $
-CREATE TRIGGER update_travel_to_log AFTER UPDATE  ON travel_to
+CREATE TRIGGER update_travel_to_log BEFORE UPDATE  ON travel_to
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -111,7 +111,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS delete_travel_to_log;
 DELIMITER $
-CREATE TRIGGER delete_travel_to_log AFTER DELETE ON travel_to
+CREATE TRIGGER delete_travel_to_log BEFORE DELETE ON travel_to
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -121,7 +121,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS insert_destination_log;
 DELIMITER $
-CREATE TRIGGER insert_destination_log AFTER INSERT  ON destination
+CREATE TRIGGER insert_destination_log BEFORE INSERT  ON destination
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -131,7 +131,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS update_destination_log;
 DELIMITER $
-CREATE TRIGGER update_destination_log AFTER UPDATE  ON destination
+CREATE TRIGGER update_destination_log BEFORE UPDATE  ON destination
 FOR EACH ROW
 BEGIN
   INSERT INTO log (event_type, table_name, username)
@@ -141,7 +141,7 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS delete_destination_log;
 DELIMITER $
-CREATE TRIGGER delete_destination_log AFTER DELETE ON destination
+CREATE TRIGGER delete_destination_log BEFORE DELETE ON destination
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
