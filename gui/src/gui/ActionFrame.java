@@ -48,6 +48,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jSeparator12 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
@@ -60,11 +61,13 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         InsertAdminsButton = new javax.swing.JMenuItem();
         jSeparator10 = new javax.swing.JPopupMenu.Separator();
-        GuideButton = new javax.swing.JMenuItem();
+        GuideInsertButton = new javax.swing.JMenuItem();
         jSeparator11 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        DriverInsertButton = new javax.swing.JMenuItem();
         jSeparator13 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        TripInsertButton = new javax.swing.JMenuItem();
+        jSeparator15 = new javax.swing.JPopupMenu.Separator();
+        EventInsertButton = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         EditDataButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -161,33 +164,42 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu3.add(InsertAdminsButton);
         jMenu3.add(jSeparator10);
 
-        GuideButton.setText("Guide");
-        GuideButton.addActionListener(new java.awt.event.ActionListener() {
+        GuideInsertButton.setText("Guide");
+        GuideInsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuideButtonActionPerformed(evt);
+                GuideInsertButtonActionPerformed(evt);
             }
         });
-        jMenu3.add(GuideButton);
+        jMenu3.add(GuideInsertButton);
         jMenu3.add(jSeparator11);
 
-        jMenuItem3.setText("Driver");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        DriverInsertButton.setText("Driver");
+        DriverInsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                DriverInsertButtonActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu3.add(DriverInsertButton);
 
         jMenu4.add(jMenu3);
         jMenu4.add(jSeparator13);
 
-        jMenuItem4.setText("Trip");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        TripInsertButton.setText("Trip");
+        TripInsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                TripInsertButtonActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu4.add(TripInsertButton);
+        jMenu4.add(jSeparator15);
+
+        EventInsertButton.setText("Event");
+        EventInsertButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EventInsertButtonActionPerformed(evt);
+            }
+        });
+        jMenu4.add(EventInsertButton);
 
         jMenu1.add(jMenu4);
         jMenu1.add(jSeparator1);
@@ -444,23 +456,29 @@ public class ActionFrame extends javax.swing.JFrame {
         ia.setVisible(true);
     }//GEN-LAST:event_InsertAdminsButtonActionPerformed
 
-    private void GuideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuideButtonActionPerformed
+    private void GuideInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuideInsertButtonActionPerformed
         // TODO add your handling code here:
         InsertGuideDataFrame ig = new InsertGuideDataFrame();
         ig.setVisible(true);
-    }//GEN-LAST:event_GuideButtonActionPerformed
+    }//GEN-LAST:event_GuideInsertButtonActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void DriverInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DriverInsertButtonActionPerformed
         // TODO add your handling code here:
         InsertDriverDataFrame id = new InsertDriverDataFrame();
         id.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_DriverInsertButtonActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void TripInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TripInsertButtonActionPerformed
         // TODO add your handling code here:
         InsertTripDataFrame it = new InsertTripDataFrame();
         it.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_TripInsertButtonActionPerformed
+
+    private void EventInsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventInsertButtonActionPerformed
+        // TODO add your handling code here:
+        InsertEventDataFrame ie = new InsertEventDataFrame();
+        ie.setVisible(true);
+    }//GEN-LAST:event_EventInsertButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -502,13 +520,16 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem BranchInfoButton;
     private javax.swing.JMenuItem CustomerInfoButton;
     private javax.swing.JMenuItem DeleteDataButton;
+    private javax.swing.JMenuItem DriverInsertButton;
     private javax.swing.JMenuItem EditDataButton;
-    private javax.swing.JMenuItem GuideButton;
+    private javax.swing.JMenuItem EventInsertButton;
+    private javax.swing.JMenuItem GuideInsertButton;
     private javax.swing.JMenuItem InserDataButton;
     private javax.swing.JMenuItem InsertAdminsButton;
     private javax.swing.JMenuItem InsertPhonesButton;
     private javax.swing.JMenuBar MenuBarFrame;
     private javax.swing.JMenuItem TripInfoButton;
+    private javax.swing.JMenuItem TripInsertButton;
     private javax.swing.JMenuItem ViewChangesButton;
     private javax.swing.JMenuItem WorkerInfoButton;
     private java.awt.Button button1;
@@ -525,8 +546,6 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
@@ -536,6 +555,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JPopupMenu.Separator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JPopupMenu.Separator jSeparator15;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
