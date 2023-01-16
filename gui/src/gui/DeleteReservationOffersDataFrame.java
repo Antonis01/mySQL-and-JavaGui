@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author antonis
  */
-public class DeleteOffersDataFrame extends javax.swing.JFrame {
+public class DeleteReservationOffersDataFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form DeleteOffersDataFrame
+     * Creates new form DeleteReservationOffersDataFrame
      */
-    public DeleteOffersDataFrame() {
+    public DeleteReservationOffersDataFrame() {
         initComponents();
     }
 
@@ -31,16 +31,16 @@ public class DeleteOffersDataFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        OfferIDTextField = new javax.swing.JTextField();
+        ReservationOfferIDTextField = new javax.swing.JTextField();
         DeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Delete Data from Offers:");
+        jLabel1.setText("Delete Data from Reservation Offers:");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel2.setText("Offer ID:");
+        jLabel2.setText("Reservation Offer ID:");
 
         DeleteButton.setText("DELETE");
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,14 +56,18 @@ public class DeleteOffersDataFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 86, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DeleteButton)
-                            .addComponent(OfferIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(DeleteButton)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(ReservationOfferIDTextField))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,13 +77,13 @@ public class DeleteOffersDataFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(OfferIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(ReservationOfferIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DeleteButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(388, 179));
+        setSize(new java.awt.Dimension(441, 179));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -87,15 +91,15 @@ public class DeleteOffersDataFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String delete_offers = "DELETE FROM offers WHERE offer_tr_id= ?";
+        String delete_reservation_offers = "DELETE FROM reservation_offers WHERE res_off_tr_id= ?";
 
         PreparedStatement pstmt;
 
         try {
 
-            pstmt = con.getConnection().prepareStatement(delete_offers);
+            pstmt = con.getConnection().prepareStatement(delete_reservation_offers);
 
-            pstmt.setInt(1, Integer.parseInt(OfferIDTextField.getText()));
+            pstmt.setInt(1, Integer.parseInt(ReservationOfferIDTextField.getText()));
 
             pstmt.executeUpdate();
 
@@ -130,27 +134,27 @@ public class DeleteOffersDataFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DeleteOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteReservationOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DeleteOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteReservationOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DeleteOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteReservationOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DeleteOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeleteReservationOffersDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DeleteOffersDataFrame().setVisible(true);
+                new DeleteReservationOffersDataFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;
-    private javax.swing.JTextField OfferIDTextField;
+    private javax.swing.JTextField ReservationOfferIDTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

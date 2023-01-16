@@ -111,6 +111,8 @@ public class ActionFrame extends javax.swing.JFrame {
         DestinationDeleteButton = new javax.swing.JMenuItem();
         jSeparator18 = new javax.swing.JPopupMenu.Separator();
         DeleteOffersButton = new javax.swing.JMenuItem();
+        jSeparator30 = new javax.swing.JPopupMenu.Separator();
+        DeleteResOffersButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -181,6 +183,7 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenuItem7.setText("jMenuItem7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Travel Agency");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         button1.setLabel("button1");
@@ -401,6 +404,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(DeleteOffersButton);
+        jMenu5.add(jSeparator30);
+
+        DeleteResOffersButton.setText("Reservation Offers");
+        DeleteResOffersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteResOffersButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(DeleteResOffersButton);
 
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
@@ -751,6 +763,12 @@ public class ActionFrame extends javax.swing.JFrame {
         iro.setVisible(true);
     }//GEN-LAST:event_ReservationOffersInsertButtonActionPerformed
 
+    private void DeleteResOffersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteResOffersButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteReservationOffersDataFrame dro = new DeleteReservationOffersDataFrame();
+        dro.setVisible(true);
+    }//GEN-LAST:event_DeleteResOffersButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -792,6 +810,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem BranchInfoButton;
     private javax.swing.JMenuItem CustomerInfoButton;
     private javax.swing.JMenuItem DeleteOffersButton;
+    private javax.swing.JMenuItem DeleteResOffersButton;
     private javax.swing.JMenuItem DeleteWorkerButton;
     private javax.swing.JMenuItem DestinationDeleteButton;
     private javax.swing.JMenuItem DestinationInsertButton;
@@ -869,6 +888,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator28;
     private javax.swing.JPopupMenu.Separator jSeparator29;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
