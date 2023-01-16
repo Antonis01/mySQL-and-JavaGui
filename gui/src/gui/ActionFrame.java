@@ -93,6 +93,8 @@ public class ActionFrame extends javax.swing.JFrame {
         TripDeleteButton = new javax.swing.JMenuItem();
         jSeparator23 = new javax.swing.JPopupMenu.Separator();
         EventDeleteButton = new javax.swing.JMenuItem();
+        jSeparator24 = new javax.swing.JPopupMenu.Separator();
+        TravelToDeleteButton = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         AddNewITButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -311,6 +313,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu5.add(EventDeleteButton);
+        jMenu5.add(jSeparator24);
+
+        TravelToDeleteButton.setText("Travel To");
+        TravelToDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TravelToDeleteButtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(TravelToDeleteButton);
 
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator3);
@@ -619,6 +630,12 @@ public class ActionFrame extends javax.swing.JFrame {
         de.setVisible(true);
     }//GEN-LAST:event_EventDeleteButtonActionPerformed
 
+    private void TravelToDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TravelToDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        DeleteTravelToDataFrame dt = new DeleteTravelToDataFrame ();
+        dt.setVisible(true);
+    }//GEN-LAST:event_TravelToDeleteButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -671,6 +688,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBarFrame;
     private javax.swing.JMenuItem PhonesDeleteButton;
     private javax.swing.JMenuItem ReservationInsertButton;
+    private javax.swing.JMenuItem TravelToDeleteButton;
     private javax.swing.JMenuItem TravelToInstertButton;
     private javax.swing.JMenuItem TripDeleteButton;
     private javax.swing.JMenuItem TripInfoButton;
@@ -718,6 +736,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator21;
     private javax.swing.JPopupMenu.Separator jSeparator22;
     private javax.swing.JPopupMenu.Separator jSeparator23;
+    private javax.swing.JPopupMenu.Separator jSeparator24;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
