@@ -3,23 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui;
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author antonis
  */
-public class DeleteBranchDataFrame extends javax.swing.JFrame {
+public class DeletePhonesDataFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form DeleteBranchDataFrame
+     * Creates new form DeletePhonedDataFrame
      */
-    public DeleteBranchDataFrame() {
+    public DeletePhonesDataFrame() {
         initComponents();
     }
 
@@ -37,10 +35,10 @@ public class DeleteBranchDataFrame extends javax.swing.JFrame {
         BranchCodeTextField = new javax.swing.JTextField();
         DeleteButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Dlete Data for Branch");
+        jLabel1.setText("Delete Data for Phones");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Branch Code:");
@@ -82,35 +80,33 @@ public class DeleteBranchDataFrame extends javax.swing.JFrame {
                     .addComponent(BranchCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(361, 187));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
-         ConnectToMySQL con = new ConnectToMySQL();
+        ConnectToMySQL con = new ConnectToMySQL();
 
-        String delete_branch = "DELETE FROM branch WHERE br_code= ?";
-        
+        String delete_phones = "DELETE FROM phones WHERE ph_br_code= ?";
+
         PreparedStatement pstmt;
 
         try {
-                   
-            pstmt = con.getConnection().prepareStatement(delete_branch);
-            
+
+            pstmt = con.getConnection().prepareStatement(delete_phones);
+
             pstmt.setInt(1, Integer.parseInt(BranchCodeTextField.getText()));
-           
+
             pstmt.executeUpdate();
-           
+
             JOptionPane.showMessageDialog(rootPane,"Delete Successful");
             pstmt.close();
-            
+
             con.getConnection().close();
-            
-            
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane,"Delete Unsuccessful");
             Logger.getLogger(AddNewITFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -137,20 +133,21 @@ public class DeleteBranchDataFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DeleteBranchDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeletePhonesDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DeleteBranchDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeletePhonesDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DeleteBranchDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeletePhonesDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DeleteBranchDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DeletePhonesDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DeleteBranchDataFrame().setVisible(true);
+                new DeletePhonesDataFrame().setVisible(true);
             }
         });
     }
