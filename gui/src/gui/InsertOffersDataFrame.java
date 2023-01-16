@@ -48,7 +48,7 @@ public class InsertOffersDataFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Insert a new guide:");
+        jLabel1.setText("Insert a new Offer:");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Offer Trip ID:");
