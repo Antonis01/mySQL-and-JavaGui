@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author antonis
  */
-public class UpdateGuideDataFrame extends javax.swing.JFrame {
+public class UpdateDriverDataFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateGuideDataFrame
+     * Creates new form UpdateDriverDataFrame
      */
-    public UpdateGuideDataFrame() {
+    public UpdateDriverDataFrame() {
         initComponents();
     }
 
@@ -32,12 +32,12 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        GuideIDTextField = new javax.swing.JTextField();
+        DriverIDTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         NameTextField = new javax.swing.JTextField();
+        UpdateNameButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         LnameTextField = new javax.swing.JTextField();
-        UpdateNameButton = new javax.swing.JButton();
         UpdateLnameButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         SalaryTextField = new javax.swing.JTextField();
@@ -46,25 +46,25 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
         BrCodeTextField = new javax.swing.JTextField();
         UpdateBrCodeButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        CVTextField = new javax.swing.JTextField();
-        UpdateCVButton = new javax.swing.JButton();
+        ChooseLicense = new javax.swing.JComboBox<>();
+        UpdateLicenseButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        LanguagesTextField = new javax.swing.JTextField();
-        UpdateLanguagesButton = new javax.swing.JButton();
+        ChooseRoute = new javax.swing.JComboBox<>();
+        UpdateRouteButton = new javax.swing.JButton();
+        ExperienceButton = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        ExperienceTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Update Data for Guide");
+        jLabel1.setText("Update Data for Driver");
 
         jLabel5.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel5.setText("Guide ID:");
+        jLabel5.setText("Driver ID:");
 
         jLabel2.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel2.setText("Name:");
-
-        jLabel3.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel3.setText("Lastname:");
 
         UpdateNameButton.setText("UPDATE");
         UpdateNameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +72,9 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
                 UpdateNameButtonActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
+        jLabel3.setText("Lastname:");
 
         UpdateLnameButton.setText("UPDATE");
         UpdateLnameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,24 +104,48 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel8.setText("CV:");
+        jLabel8.setText("License:");
 
-        UpdateCVButton.setText("UPDATE");
-        UpdateCVButton.addActionListener(new java.awt.event.ActionListener() {
+        ChooseLicense.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D" }));
+        ChooseLicense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateCVButtonActionPerformed(evt);
+                ChooseLicenseActionPerformed(evt);
+            }
+        });
+
+        UpdateLicenseButton.setText("UPDATE");
+        UpdateLicenseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateLicenseButtonActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
-        jLabel9.setText("Languages:");
+        jLabel9.setText("Route:");
 
-        UpdateLanguagesButton.setText("UPDATE");
-        UpdateLanguagesButton.addActionListener(new java.awt.event.ActionListener() {
+        ChooseRoute.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOCAL", "ABROAD" }));
+        ChooseRoute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateLanguagesButtonActionPerformed(evt);
+                ChooseRouteActionPerformed(evt);
             }
         });
+
+        UpdateRouteButton.setText("UPDATE");
+        UpdateRouteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateRouteButtonActionPerformed(evt);
+            }
+        });
+
+        ExperienceButton.setText("UPDATE");
+        ExperienceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExperienceButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
+        jLabel10.setText("Experience:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,46 +153,56 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(LanguagesTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(CVTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BrCodeTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(SalaryTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(LnameTextField))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(NameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(GuideIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UpdateLnameButton)
-                    .addComponent(UpdateNameButton)
-                    .addComponent(UpdateSalaryButton)
-                    .addComponent(UpdateBrCodeButton)
-                    .addComponent(UpdateCVButton)
-                    .addComponent(UpdateLanguagesButton))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ChooseRoute, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(UpdateRouteButton))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ChooseLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(BrCodeTextField))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(SalaryTextField))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(LnameTextField))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(NameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(DriverIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(UpdateLnameButton)
+                                .addComponent(UpdateNameButton)
+                                .addComponent(UpdateSalaryButton)
+                                .addComponent(UpdateBrCodeButton)
+                                .addComponent(UpdateLicenseButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ExperienceButton)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +212,7 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GuideIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DriverIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,17 +236,22 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CVTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateCVButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(UpdateLicenseButton)
+                    .addComponent(ChooseLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LanguagesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateLanguagesButton))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(UpdateRouteButton)
+                    .addComponent(ChooseRoute, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExperienceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExperienceButton))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(451, 440));
+        setSize(new java.awt.Dimension(450, 483));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -226,7 +268,7 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setString(1, NameTextField.getText());
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -257,7 +299,7 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setString(1, LnameTextField.getText());
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -288,7 +330,7 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setFloat(1, Float.parseFloat(SalaryTextField.getText()));
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -319,7 +361,7 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             pst = con.getConnection().prepareStatement(update);
 
             pst.setInt(1, Integer.parseInt(BrCodeTextField.getText()));
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -337,11 +379,15 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_UpdateBrCodeButtonActionPerformed
 
-    private void UpdateCVButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateCVButtonActionPerformed
+    private void ChooseLicenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChooseLicenseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChooseLicenseActionPerformed
+
+    private void UpdateLicenseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateLicenseButtonActionPerformed
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String update = "UPDATE guide SET gui_cv = ? WHERE gui_AT = ?";
+        String update = "UPDATE driver SET drv_license = ? WHERE drv_AT = ?";
 
         PreparedStatement pst;
 
@@ -349,8 +395,8 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
 
             pst = con.getConnection().prepareStatement(update);
 
-            pst.setString(1, CVTextField.getText());
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(1, ChooseLicense.getSelectedItem().toString());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -366,13 +412,17 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         }
-    }//GEN-LAST:event_UpdateCVButtonActionPerformed
+    }//GEN-LAST:event_UpdateLicenseButtonActionPerformed
 
-    private void UpdateLanguagesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateLanguagesButtonActionPerformed
+    private void ChooseRouteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChooseRouteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChooseRouteActionPerformed
+
+    private void UpdateRouteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateRouteButtonActionPerformed
         // TODO add your handling code here:
         ConnectToMySQL con = new ConnectToMySQL();
 
-        String update = "UPDATE languages SET lng_language = ? WHERE lng_gui_AT = ?";
+        String update = "UPDATE driver SET drv_rout = ? WHERE drv_AT = ?";
 
         PreparedStatement pst;
 
@@ -380,8 +430,8 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
 
             pst = con.getConnection().prepareStatement(update);
 
-            pst.setString(1, LanguagesTextField.getText());
-            pst.setString(2, GuideIDTextField.getText());
+            pst.setString(1, ChooseRoute.getSelectedItem().toString());
+            pst.setString(2, DriverIDTextField.getText());
 
             pst.executeUpdate();
 
@@ -397,7 +447,38 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         }
-    }//GEN-LAST:event_UpdateLanguagesButtonActionPerformed
+    }//GEN-LAST:event_UpdateRouteButtonActionPerformed
+
+    private void ExperienceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExperienceButtonActionPerformed
+        // TODO add your handling code here:
+        ConnectToMySQL con = new ConnectToMySQL();
+
+        String update = "UPDATE driver SET drv_experience = ? WHERE drv_AT = ?";
+
+        PreparedStatement pst;
+
+        try {
+
+            pst = con.getConnection().prepareStatement(update);
+
+            pst.setInt(1, Integer.parseInt(ExperienceTextField.getText()));
+            pst.setString(2, DriverIDTextField.getText());
+
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(rootPane,"Update Successful");
+            pst.close();
+
+            con.getConnection().close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
+            Logger.getLogger(AddNewITFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
+            System.out.println("Invalid input");
+        }
+    }//GEN-LAST:event_ExperienceButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,39 +497,42 @@ public class UpdateGuideDataFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateDriverDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateDriverDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateDriverDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateGuideDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateDriverDataFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateGuideDataFrame().setVisible(true);
+                new UpdateDriverDataFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BrCodeTextField;
-    private javax.swing.JTextField CVTextField;
-    private javax.swing.JTextField GuideIDTextField;
-    private javax.swing.JTextField LanguagesTextField;
+    private javax.swing.JComboBox<String> ChooseLicense;
+    private javax.swing.JComboBox<String> ChooseRoute;
+    private javax.swing.JTextField DriverIDTextField;
+    private javax.swing.JButton ExperienceButton;
+    private javax.swing.JTextField ExperienceTextField;
     private javax.swing.JTextField LnameTextField;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JTextField SalaryTextField;
     private javax.swing.JButton UpdateBrCodeButton;
-    private javax.swing.JButton UpdateCVButton;
-    private javax.swing.JButton UpdateLanguagesButton;
+    private javax.swing.JButton UpdateLicenseButton;
     private javax.swing.JButton UpdateLnameButton;
     private javax.swing.JButton UpdateNameButton;
+    private javax.swing.JButton UpdateRouteButton;
     private javax.swing.JButton UpdateSalaryButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
