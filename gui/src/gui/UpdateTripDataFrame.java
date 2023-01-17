@@ -271,7 +271,7 @@ public class UpdateTripDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(rootPane,"Insert Unsuccessful");
+            JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             Logger.getLogger(InsertTripDataFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_UpdateDepartureButtonActionPerformed
@@ -309,7 +309,7 @@ public class UpdateTripDataFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             System.out.println("Invalid input");
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(rootPane,"Insert Unsuccessful");
+            JOptionPane.showMessageDialog(rootPane,"Update Unsuccessful");
             Logger.getLogger(InsertTripDataFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_UpdateReturnButtonActionPerformed

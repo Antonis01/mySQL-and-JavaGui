@@ -51,7 +51,7 @@ public class UpdateDestinationDataFrame extends javax.swing.JFrame {
         UpdateLocationButton = new javax.swing.JButton();
         ChooseRouteType = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
         jLabel1.setText("Update Data for Destination");
@@ -198,7 +198,8 @@ public class UpdateDestinationDataFrame extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(435, 391));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UpdateNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateNameButtonActionPerformed
