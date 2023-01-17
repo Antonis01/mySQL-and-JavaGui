@@ -109,6 +109,8 @@ public class ActionFrame extends javax.swing.JFrame {
         UpdateDestinationButton = new javax.swing.JMenuItem();
         jSeparator37 = new javax.swing.JPopupMenu.Separator();
         UpdateTravelToButton = new javax.swing.JMenuItem();
+        jSeparator38 = new javax.swing.JPopupMenu.Separator();
+        UpdateReservationButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         BranchDeleteButton = new javax.swing.JMenuItem();
@@ -408,6 +410,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu10.add(UpdateTravelToButton);
+        jMenu10.add(jSeparator38);
+
+        UpdateReservationButton.setText("Reservation");
+        UpdateReservationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateReservationButtonActionPerformed(evt);
+            }
+        });
+        jMenu10.add(UpdateReservationButton);
 
         jMenu1.add(jMenu10);
         jMenu1.add(jSeparator2);
@@ -901,6 +912,12 @@ public class ActionFrame extends javax.swing.JFrame {
         utt.setVisible(true);
     }//GEN-LAST:event_UpdateTravelToButtonActionPerformed
 
+    private void UpdateReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateReservationButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateReservationDataFrame ur = new UpdateReservationDataFrame();
+        ur.setVisible(true);
+    }//GEN-LAST:event_UpdateReservationButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -970,6 +987,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem UpdateDriverButton;
     private javax.swing.JMenuItem UpdateEventButton;
     private javax.swing.JMenuItem UpdateGuideButton;
+    private javax.swing.JMenuItem UpdateReservationButton;
     private javax.swing.JMenuItem UpdateTravelToButton;
     private javax.swing.JMenuItem UpdateTripButton;
     private javax.swing.JMenuItem ViewChangesButton;
@@ -1038,6 +1056,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator35;
     private javax.swing.JPopupMenu.Separator jSeparator36;
     private javax.swing.JPopupMenu.Separator jSeparator37;
+    private javax.swing.JPopupMenu.Separator jSeparator38;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
