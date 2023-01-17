@@ -62,6 +62,10 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenu9 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu13 = new javax.swing.JMenu();
         button1 = new java.awt.Button();
         jButton2 = new javax.swing.JButton();
         MenuBarFrame = new javax.swing.JMenuBar();
@@ -111,6 +115,8 @@ public class ActionFrame extends javax.swing.JFrame {
         UpdateTravelToButton = new javax.swing.JMenuItem();
         jSeparator38 = new javax.swing.JPopupMenu.Separator();
         UpdateReservationButton = new javax.swing.JMenuItem();
+        jSeparator39 = new javax.swing.JPopupMenu.Separator();
+        UpdateOffersButton = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         BranchDeleteButton = new javax.swing.JMenuItem();
@@ -202,6 +208,14 @@ public class ActionFrame extends javax.swing.JFrame {
         jMenuItem7.setText("jMenuItem7");
 
         jMenuItem8.setText("jMenuItem8");
+
+        jMenuItem9.setText("jMenuItem9");
+
+        jMenu12.setText("File");
+        jMenuBar3.add(jMenu12);
+
+        jMenu13.setText("Edit");
+        jMenuBar3.add(jMenu13);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Travel Agency");
@@ -419,6 +433,15 @@ public class ActionFrame extends javax.swing.JFrame {
             }
         });
         jMenu10.add(UpdateReservationButton);
+        jMenu10.add(jSeparator39);
+
+        UpdateOffersButton.setText("Offers");
+        UpdateOffersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateOffersButtonActionPerformed(evt);
+            }
+        });
+        jMenu10.add(UpdateOffersButton);
 
         jMenu1.add(jMenu10);
         jMenu1.add(jSeparator2);
@@ -918,6 +941,12 @@ public class ActionFrame extends javax.swing.JFrame {
         ur.setVisible(true);
     }//GEN-LAST:event_UpdateReservationButtonActionPerformed
 
+    private void UpdateOffersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateOffersButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateOffersDataFrame uo = new UpdateOffersDataFrame();
+        uo.setVisible(true);
+    }//GEN-LAST:event_UpdateOffersButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -987,6 +1016,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem UpdateDriverButton;
     private javax.swing.JMenuItem UpdateEventButton;
     private javax.swing.JMenuItem UpdateGuideButton;
+    private javax.swing.JMenuItem UpdateOffersButton;
     private javax.swing.JMenuItem UpdateReservationButton;
     private javax.swing.JMenuItem UpdateTravelToButton;
     private javax.swing.JMenuItem UpdateTripButton;
@@ -1001,6 +1031,8 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1011,6 +1043,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -1021,6 +1054,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
@@ -1057,6 +1091,7 @@ public class ActionFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator36;
     private javax.swing.JPopupMenu.Separator jSeparator37;
     private javax.swing.JPopupMenu.Separator jSeparator38;
+    private javax.swing.JPopupMenu.Separator jSeparator39;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
