@@ -51,7 +51,7 @@ public class UpdateOffersDataFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Update Data for Travel To");
+        jLabel1.setText("Update Data for Offers");
 
         jLabel5.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel5.setText("Offer Travel ID");

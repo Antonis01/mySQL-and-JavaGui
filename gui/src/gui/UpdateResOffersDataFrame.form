@@ -113,7 +113,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Laksaman" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Insert a new Reservation for an Offer:"/>
+        <Property name="text" type="java.lang.String" value="Update a Reservation for an Offer:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">

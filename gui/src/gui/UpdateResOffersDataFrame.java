@@ -49,7 +49,7 @@ public class UpdateResOffersDataFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Laksaman", 1, 18)); // NOI18N
-        jLabel1.setText("Insert a new Reservation for an Offer:");
+        jLabel1.setText("Update a Reservation for an Offer:");
 
         jLabel3.setFont(new java.awt.Font("Laksaman", 1, 16)); // NOI18N
         jLabel3.setText("Lastname:");
