@@ -3,3 +3,5 @@
 /gui/nbproject/private/
 /gui/build/
 /gui/dist/
+*.xml
+*.iml
