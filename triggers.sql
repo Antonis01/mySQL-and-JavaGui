@@ -5,7 +5,7 @@ CREATE TRIGGER insert_trip_log BEFORE INSERT  ON trip
 FOR EACH ROW  
 BEGIN
   INSERT INTO log (event_type, table_name, username)
-  VALUES ('INSERT', "TRIP", session_use());
+  VALUES ('INSERT', "TRIP", session_user());
 END$
 DELIMITER ;
 
